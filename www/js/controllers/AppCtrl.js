@@ -8,13 +8,7 @@
             this.classList.toggle('active');
         });
     }
-
-    var fab = document.getElementById('fab');
-    fab.addEventListener('click', function () {
-        //location.href = 'https://twitter.com/satish_vr2011';
-        window.open('https://twitter.com/satish_vr2011', '_blank');
-    });
-
+    
     // .fromTemplate() method
     var template = '<ion-popover-view>' +
                     '   <ion-header-bar>' +

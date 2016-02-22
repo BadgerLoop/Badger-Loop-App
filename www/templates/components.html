@@ -1,15 +1,20 @@
 ﻿
 <ion-view view-title="Badger Loop">
     <ion-content>
-        <div class="bar bar-subheader bar-stable static text-center">
-            <strong class="title">All Ionic, Materialized</strong>
-        </div>
+            <button class="button button-primary button-block " ng-click="checkForUpdates()">
+            Check for updates
+            </button>
+            <button class="button button-stable button-block button-pulse" ng-if="hasUpdate" ng-click="doUpdate()">
+            download update
+            </button>
         <div class="im-wrapper">
             <!-- Ionic Components -->
             <h4 class="border-top">
                 <i class="icon ion-ionic"></i>
                 Ionic + Material Expansion
             </h4>
+
+
             <p>No need to add new styling! Ionic Material includes <strong>all</strong> <a href="http://ionicframework.com/docs/components/" target="_blank" class="link">Ionic components</a> out of the box, closely themed to the Google Material Design spec.</p>
             <p>View the <a href="../demo/www/index.html"><strong>DEMO APP</strong></a> "Thronester" in /demo/www/ to see how things can be pieced together (notice: it does push the limits on Android).</p>
             <p>

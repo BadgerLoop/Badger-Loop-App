@@ -21,7 +21,7 @@ install ionic:
 
 View the app in your browser:
 
-	ionic serve 
+	ionic serve
 or
 
 	ionic serve --lab
@@ -31,7 +31,7 @@ or
 To add the Android platform to the app:
 
 	ionic platform add android
-	
+
 Install  [crosswalk web runtime](https://crosswalk-project.org/) to the android build (this allows the app to run more consistently on a wider variety of android devices)
 
 	ionic browser add crosswalk
@@ -40,9 +40,9 @@ To add the IOS platform to the app
 
 	ionic platform add ios
 
-* Note: With IOS9 there is are new transport security settings/policies (Thanks apple for being such hard asses) so we may encounter problems with pulling data from remotes sources.  Contact Kyle Grieger or Chase Roosin if you have issues.
+* Note: With IOS9 there is are new transport security settings/policies (Thanks apple for being such hard asses) so we may encounter problems with pulling data from remotes sources.  Contact Kyle Grieger or Chase Roossin if you have issues.
 
-To build the app 
+To build the app
 
 	ionic platform build ios
 
@@ -50,15 +50,19 @@ or
 
 	ionic platform build android
 
-* Note to build a signed production version of the app to submit to the app store please contact Kyle Grieger or Chase Roosin.
+* Note to build a signed production version of the app to submit to the app store please contact Kyle Grieger or Chase Roossin.
 
 To emulate the app follow the instructions found [here](http://ionicframework.com/docs/guide/testing.html).
 
+Note: If you have Xcode installed on your machine you are able to run:
 
+	ionic emulate ios
+
+And that will both build and emulate the app in the simulator.
 
 ##Misc
 
-* If anyone wants/needs access to the Badger Loop app Ionic account please contact Kyle Grieger (Kgrieger on slack).
+* If anyone wants/needs access to the BadgerLoop app Ionic account please contact Kyle Grieger (Kgrieger on slack).
 * Ionic has a feature called [Ionic Deploy](http://docs.ionic.io/docs/deploy-from-scratch) which will let us push continuous updates to the app without having to resubmit new versions to the app store(s) that will be implemented in the near future.
 * Also you can use [ionic lab](http://lab.ionic.io/) to add/work on the app which can make building/testing/adding plugins much easier.
 * We want to get a simplistic cool looking app published on the app store as soon as possible and we can add more and more cool stuff to it with ease via ionic deploy.

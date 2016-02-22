@@ -78,6 +78,16 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         }
     })
+
+    .state('app.ai', {
+        url: '/ai',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/ai.html',
+                controller: 'AICtrl'
+            }
+        }
+    })
     ;
 
     // if none of the above states are matched, use this as the fallback

@@ -36,7 +36,7 @@ app.directive('input', function($timeout) {
   }
 })
 
-.controller('AICtrl', function($scope, $timeout, $ionicScrollDelegate) {
+.controller('AICtrl', function($scope, $timeout, $ionicScrollDelegate, $riffle) {
 
   $scope.hideTime = true;
 
@@ -58,6 +58,7 @@ app.directive('input', function($timeout) {
     delete $scope.data.message;
     $ionicScrollDelegate.scrollBottom(true);
 
+    $riffle.publish("message", $scope.data.message);
   };
 
 

@@ -96,6 +96,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
 // Config for Exis
 .config(function($riffleProvider){
-  $riffleProvider.setDomain("xs.demo.test");
-  $riffleProvider.setFabricLocal();
+    $riffleProvider.setDomain("xs.demo.test");
+    $riffleProvider.setFabricLocal();
+})
+.run(function($riffle){
+    $riffle.join();   
 });

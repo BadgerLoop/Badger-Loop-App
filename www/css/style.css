@@ -78,7 +78,7 @@
   -moz-transform: translate3d(120px, 0, 0) !important;
   transform: translate3d(120px, 0, 0) !important;
 }
- .message-span {
+ .messages.other .message-span {
   color: black !important;
   background-color: #C7C7CC !important;
 }

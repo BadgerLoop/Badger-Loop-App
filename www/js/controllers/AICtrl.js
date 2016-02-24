@@ -8,33 +8,49 @@ app
     isIOS = ionic.Platform.isWebView() && ionic.Platform.isIOS();
 
   //Formats and sends message to UI
-  $scope.sendMsg = function(id, message){
+  // $scope.sendMsg = function(id, message){
+  //   var d = new Date();
+  //   d = d.toLocaleTimeString().replace(/:\d+ /, ' ');
+
+  //   $scope.messages.push({
+  //     userId: id,
+  //     text: message,
+  //     time: d
+  //   });
+  // }  
+
+  // //Called when response from backend is received
+  // $scope.returnMsg = function(s){
+  //   $scope.sendMsg('54321', s);
+  // }
+
+  // //Called when user inputs message in UI
+  // $scope.userMessage = function() {
+    
+  //   $scope.sendMsg('12345', $scope.data.message);
+
+  //   //Send to Exis node the message and get response
+  //   var p = $riffle.call("message", $scope.data.message);
+  //   p.then($scope.returnMsg);
+
+  //   delete $scope.data.message;
+  //   $ionicScrollDelegate.scrollBottom(true);
+  // };
+  $scope.userMessage = function() {
+    alternate = !alternate;
+
     var d = new Date();
-    d = d.toLocaleTimeString().replace(/:\d+ /, ' ');
+  d = d.toLocaleTimeString().replace(/:\d+ /, ' ');
 
     $scope.messages.push({
-      userId: id,
-      text: message,
+      userId: alternate ? '12345' : '54321',
+      text: $scope.data.message,
       time: d
     });
-  }  
-
-  //Called when response from backend is received
-  $scope.returnMsg = function(s){
-    $scope.sendMsg('54321', s);
-  }
-
-  //Called when user inputs message in UI
-  $scope.userMessage = function() {
-    
-    $scope.sendMsg('12345', $scope.data.message);
-
-    //Send to Exis node the message and get response
-    var p = $riffle.call("message", $scope.data.message);
-    p.then($scope.returnMsg);
 
     delete $scope.data.message;
     $ionicScrollDelegate.scrollBottom(true);
+
   };
 
 

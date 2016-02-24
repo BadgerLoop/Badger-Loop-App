@@ -51,8 +51,8 @@ p {
 /* Menu */
 
 .menu .bar.bar-header.expanded {
-    background-image: url('../img/material-graphite.jpg');
-    background-size: 120%;
+    background-image: url('../img/BadgerLoopLogo.png');
+    background-size: 102%;
     background-position: 0%;
     transition: all .5s ease-in-out;
 }

@@ -17,6 +17,7 @@ app
       text: message,
       time: d
     });
+    $ionicScrollDelegate.scrollBottom(true);
   }  
 
   //Called when response from backend is received

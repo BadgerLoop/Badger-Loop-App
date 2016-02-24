@@ -38,13 +38,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         }
     })
-
-    .state('app.ink', {
-        url: '/ink',
+    .state('app.fundraising', {
+        url: '/fundraising',
         views: {
             'menuContent': {
-                templateUrl: 'templates/ink.html',
-                controller: 'InkCtrl'
+                templateUrl: 'templates/fundraising.html',
+                controller: 'FundCtrl'
             }
         }
     })

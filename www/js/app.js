@@ -48,6 +48,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         }
     })
+    .state('app.website', {
+        url: '/website',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/website.html',
+                controller: 'WebsiteCtrl'
+            }
+        }
+    })
 
     .state('app.motion', {
         url: '/motion',

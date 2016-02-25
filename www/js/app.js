@@ -142,9 +142,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
 // Config for Exis
 .config(function($riffleProvider){
-    $riffleProvider.setDomain("xs.demo.test.example");
-    $riffleProvider.setFabricLocal();
+    $riffleProvider.setDomain("xs.demo.badgerloop.blapp.Container.blai");
+    // $riffleProvider.setFabricLocal();
 })
 .run(function($riffle){
+    $riffle.setToken("hUzpwpthlJWeHG9Kb9W8yhWodm-sYQvOijNMYqY2mOxoFfZ2BZb8E.QWd1NOxCVFhW249ODPVfZ2tZZk4ke8N.h.wochywzF.PNrYWsPwYDjfsTCfSmXx1JUAW.29uwwh2GirelkMABQ5ynckHtCwTxYoT39K5nkxtjoA-VWHN4_");
     $riffle.join();   
 });

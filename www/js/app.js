@@ -76,6 +76,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         }
     })
+
     .state('app.fundraising', {
         url: '/fundraising',
         views: {
@@ -85,6 +86,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         }
     })
+
     .state('app.website', {
         url: '/website',
         views: {
@@ -95,16 +97,26 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }
     })
 
-    .state('app.motion', {
+    .state('app.aboutus', {
         url: '/motion',
         views: {
             'menuContent': {
-                templateUrl: 'templates/motion.html',
-                controller: 'MotionCtrl'
+                templateUrl: 'templates/aboutus.html',
+                controller: 'AboutUsCtrl'
             }
         }
     })
 
+    .state('app.team', {
+        url: '/team',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/team.html',
+                controller: 'TeamCtrl'
+            }
+        }
+    })
+    
     .state('app.components', {
         url: '/components',
         views: {
@@ -134,6 +146,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         }
     })
+
+
     ;
 
     // if none of the above states are matched, use this as the fallback

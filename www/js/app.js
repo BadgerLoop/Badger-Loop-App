@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('badger-loop', ['ionic','ionic.service.core', 'ionic-material']);
+var app = angular.module('badger-loop', ['ionic','ionic.service.core', 'ionic-material', 'ngRiffle']);
 
 app.run(function ($ionicPlatform) {
 
@@ -17,6 +17,44 @@ app.run(function ($ionicPlatform) {
             StatusBar.styleDefault();
         }
     });
+})
+
+.directive('input', function($timeout) {
+  return {
+    restrict: 'E',
+    scope: {
+      'returnClose': '=',
+      'onReturn': '&',
+      'onFocus': '&',
+      'onBlur': '&'
+    },
+    link: function(scope, element, attr) {
+      element.bind('focus', function(e) {
+        if (scope.onFocus) {
+          $timeout(function() {
+            scope.onFocus();
+          });
+        }
+      });
+      element.bind('blur', function(e) {
+        if (scope.onBlur) {
+          $timeout(function() {
+            scope.onBlur();
+          });
+        }
+      });
+      element.bind('keydown', function(e) {
+        if (e.which == 13) {
+          if (scope.returnClose) element[0].blur();
+          if (scope.onReturn) {
+            $timeout(function() {
+              scope.onReturn();
+            });
+          }
+        }
+      });
+    }
+  }
 })
 
 app.config(function ($stateProvider, $urlRouterProvider) {
@@ -38,13 +76,21 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         }
     })
-
-    .state('app.ink', {
-        url: '/ink',
+    .state('app.fundraising', {
+        url: '/fundraising',
         views: {
             'menuContent': {
-                templateUrl: 'templates/ink.html',
-                controller: 'InkCtrl'
+                templateUrl: 'templates/fundraising.html',
+                controller: 'FundCtrl'
+            }
+        }
+    })
+    .state('app.website', {
+        url: '/website',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/website.html',
+                controller: 'WebsiteCtrl'
             }
         }
     })
@@ -78,8 +124,28 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         }
     })
+
+    .state('app.ai', {
+        url: '/ai',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/ai.html',
+                controller: 'AICtrl'
+            }
+        }
+    })
     ;
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/components');
+    $urlRouterProvider.otherwise('/app/ai');
+})
+
+// Config for Exis
+.config(function($riffleProvider){
+    $riffleProvider.setDomain("xs.demo.badgerloop.blapp.Container.blai");
+    // $riffleProvider.setFabricLocal();
+})
+.run(function($riffle){
+    $riffle.setToken("hUzpwpthlJWeHG9Kb9W8yhWodm-sYQvOijNMYqY2mOxoFfZ2BZb8E.QWd1NOxCVFhW249ODPVfZ2tZZk4ke8N.h.wochywzF.PNrYWsPwYDjfsTCfSmXx1JUAW.29uwwh2GirelkMABQ5ynckHtCwTxYoT39K5nkxtjoA-VWHN4_");
+    $riffle.join();   
 });

@@ -1,4 +1,11 @@
 {
   "name": "Badger Loop",
-  "app_id": "4d6a7f66"
+  "app_id": "4d6a7f66",
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk",
+      "version": "12.41.296.5"
+    }
+  ]
 }

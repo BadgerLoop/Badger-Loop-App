@@ -86,7 +86,7 @@
 .message-span {
   background: #C7C7CC !important;
   display: inline-block !important;
-  color: black !important;
+  color: Black !important;
   padding: 10px !important;
   border-radius: 10px !important;
   text-align: left !important;
@@ -247,7 +247,7 @@ p {
 }
 
 .code-wrapper::before {
-    color: #1B5E20;
+    color: #222222;
     font-family: "Ionicons";
     speak: none;
     font-size: 18px;

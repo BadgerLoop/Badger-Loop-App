@@ -1,6 +1,4 @@
-app
-
-.controller('AICtrl', function($scope, $timeout, $ionicScrollDelegate, $riffle) {
+app.controller('AICtrl', function($scope, $timeout, $ionicScrollDelegate, $riffle) {
 
   $scope.hideTime = true;
 

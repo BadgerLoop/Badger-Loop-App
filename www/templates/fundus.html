@@ -3,8 +3,7 @@
 
     <div class="padding" style="text-align: center">
       <img class="profile-picture" style="width: 100px; height: 100px;" src="img/thumb/logobl.png" class="circle">
-      <h2>{{ProductMeta.title}}</h2>
-      <h3>{{ProductMeta.description}}</h3>
+      <h3>{{ProductMeta.title}}</h3>
     </div>
 
     <p>
@@ -13,6 +12,14 @@
       <button class="button button-full button-positive" ng-click="charge(50)">Support $50</button>
       <button class="button button-full button-positive" ng-click="charge(100)">Support $100</button>
       <button class="button button-full button-positive" ng-click="charge(500)">Support $500</button>
+      <div class="item item-input-inset">
+	    <label class="item-input-wrapper">
+	      <input ng-model="amount" type="text" placeholder="Other Amount">
+	    </label>
+	    <button class="button button-small" ng-click="charge(amount)">
+	      Fund
+	    </button>
+	  </div>
     </p>
 
     <p class="padding">

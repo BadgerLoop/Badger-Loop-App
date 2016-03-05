@@ -167,8 +167,11 @@ angular.module('starter.controllers', [])
   };
 
   $scope.charge = function(amount) {
-
-    $scope.ProductMeta.priceUSD = amount;
+    if(typeof amount === "string"){
+      $scope.ProductMeta.priceUSD = parseInt(amount);
+    }else{
+      $scope.ProductMeta.priceUSD = amount;  
+    }
     console.log($scope.ProductMeta.priceUSD);
     $scope.status['loading'] = true;
     $scope.status['message'] = "Retrieving your Stripe Token...";

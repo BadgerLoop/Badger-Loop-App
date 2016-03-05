@@ -17,20 +17,19 @@ angular.module('starter.controllers', [])
 })
 
 // News controller
-.controller('NewsCtrl', function($scope, Posts, $state) {
+.controller('NewsCtrl', function($scope, Posts, $state, $cordovaSocialSharing) {
   // get list posts froms service
   $scope.posts = Posts.all();
 
-  // toggle like button
-  $scope.toggleLike = function (post) {
-    // if user liked
-    if(post.liked) {
-      post.likeCount--;
-    } else {
-      post.likeCount++;
-    }
-    post.liked = !post.liked;
-  };
+  $scope.sharePost = function(post){
+    $cordovaSocialSharing
+    .share("Check this out", null, null, 'http://link') // Share via native share sheet
+    .then(function(result) {
+      // Success!
+    }, function(err) {
+      // An error occured. Show a message to the user
+    });
+  }
 
   // view post
   $scope.viewPost = function(postId) {

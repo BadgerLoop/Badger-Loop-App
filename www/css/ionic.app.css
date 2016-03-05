@@ -9874,7 +9874,9 @@ img.profile-picture {
     resize: none;
     height: 1.5em;
     width: 100%;
-    background: none; }
+    background: none; 
+    padding-left: 4px;
+  }
   .chat-detail .bar-footer .footer-btn-wrap {
     align-self: flex-end; }
     .chat-detail .bar-footer .footer-btn-wrap .button-icon:before {

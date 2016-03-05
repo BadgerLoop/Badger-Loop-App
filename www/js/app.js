@@ -45,6 +45,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     controller: 'AuthCtrl'
   })
 
+  // register screen
+  .state('website', {
+    url: '/website',
+    templateUrl: 'templates/website.html',
+    controller: 'AuthCtrl'
+  })
+
   // Home screen
   .state('home', {
     url: '/home',

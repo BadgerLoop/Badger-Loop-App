@@ -1,6 +1,6 @@
 angular.module('starter.services', [])
 
-  .factory('Chats', function ($riffle) {
+  .factory('Chats', function ($riffle, $ionicScrollDelegate) {
     // Might use a resource here that returns a JSON array
     var d = new Date();
     // Some fake testing data
@@ -42,6 +42,7 @@ angular.module('starter.services', [])
             'text': result,
             'time': d.toLocaleTimeString()
           });
+          $ionicScrollDelegate.$getByHandle('mainScroll').scrollBottom();
         });
       },
       get: function (chatId) {

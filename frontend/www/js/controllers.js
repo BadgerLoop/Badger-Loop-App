@@ -21,9 +21,9 @@ angular.module('starter.controllers', [])
   // get list posts froms service
   $scope.posts = Posts.all();
 
-  $scope.sharePost = function(post){
+  $scope.sharePost = function(){
     $cordovaSocialSharing
-    .share("Check this out", null, null, 'http://link') // Share via native share sheet
+    .share("Check out the BadgerLoop Team!", null, null, 'https://badgerloop.com') // Share via native share sheet
     .then(function(result) {
       // Success!
     }, function(err) {

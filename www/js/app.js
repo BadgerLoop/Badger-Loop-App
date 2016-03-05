@@ -45,10 +45,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     controller: 'AuthCtrl'
   })
 
-  // register screen
+  // website screen
   .state('website', {
     url: '/website',
     templateUrl: 'templates/website.html',
+    controller: 'AuthCtrl'
+  })
+
+  // vr screen
+  .state('vr', {
+    url: '/vr',
+    templateUrl: 'templates/vr.html',
     controller: 'AuthCtrl'
   })
 

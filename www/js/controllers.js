@@ -69,8 +69,6 @@ angular.module('starter.controllers', [])
 
     // push to massages list
     Chats.addMsg(message);
-
-    $ionicScrollDelegate.$getByHandle('mainScroll').scrollBottom();
   };
 
   // hover menu

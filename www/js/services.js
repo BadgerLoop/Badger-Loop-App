@@ -1,6 +1,6 @@
 angular.module('starter.services', [])
 
-  .factory('Chats', function () {
+  .factory('Chats', function ($riffle) {
     // Might use a resource here that returns a JSON array
 
     // Some fake testing data
@@ -34,7 +34,14 @@ angular.module('starter.services', [])
       },
       addMsg: function(msg){
         console.log(msg);
-        chats[0].messages.push(msg);
+        chats[0].messages.push(msg); //push input message
+        var p = $riffle.call("message", msg.text); //send input message
+        p.then(function(result){ //add return message to list
+          chats[0].messages.push({
+            'type': 'received',
+            'text': result
+          });
+        });
       },
       get: function (chatId) {
         for (var i = 0; i < chats.length; i++) {

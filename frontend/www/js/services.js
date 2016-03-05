@@ -59,22 +59,22 @@ angular.module('starter.services', [])
     {
         "id": 0,
         "user_id": 2,
-        "name": "Ben Sparrow",
+        "name": "Bucky Badger",
         "title": "Check out this pod!",
         "content": "A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so...",
-        "image": "img/pizza.jpg",
+        "image": "img/trophy.jpg",
         "face": "img/thumb/ben.png",
         "time": "Thursday 05:57 PM"
     },
     {
         "id": 1,
         "user_id": 2,
-        "name": "Bucky Badger",
-        "title": "Check out this pod!",
-        "content": "RIGHT ON",
-        "image": "img/pizza.jpg",
-        "face": "img/thumb/ben.png",
-        "time": "Thursday 05:57 PM"
+        "name": "BadgerLoop Team",
+        "title": "And so it begins",
+        "content": "Hyperloop is a lightning-fast transportation technology that will completely revolutionize modern transit. Since its proposal by Elon Musk in 2013, the innovative idea has evolved into a clearly influential technology of our near-future. Ultimately, the design consists of a levitating pod traveling at nearly 760 miles per hour through an evacuated steel tube. The low pressure minimizes drag forces, while contact-less magnetic levitation further diminishes energy loss. The combination of these features poise Hyperloop as the new world-wide standard for high-speed transportation efficiency.",
+        "image": "img/BadgerLoopLogo.png",
+        "face": "img/thumb/logobl.png",
+        "time": "1/1/16"
     }]
 
 

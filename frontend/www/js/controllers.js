@@ -15,7 +15,7 @@ angular.module('starter.controllers', [])
 .controller('HomeCtrl', function($scope, Posts, $state) {
 
   // Ionic.io(); 
-  var deploy = new Ionic.Deploy();
+  // var deploy = new Ionic.Deploy();
   
   // Update app code with new release from Ionic Deploy
   $scope.doUpdate = function() {

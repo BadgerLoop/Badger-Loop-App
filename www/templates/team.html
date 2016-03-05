@@ -9,11 +9,11 @@
       <div class="item-input-inset">
         <label class="item-input-wrapper">
           <i class="icon ion-ios-search placeholder-icon"></i>
-          <input type="search" placeholder="Search" autofocus="true">
+          <input type="search" placeholder="Search" autofocus="true" ng-model="searchQuery">
         </label>
       </div>
       <ion-list class="contact-list">
-        <ion-item class="item-avatar item-icon-right" ng-repeat="contact in contacts" ng-click="viewContact(contact.id)">
+        <ion-item class="item-avatar item-icon-right" ng-repeat="contact in contacts | filter: searchQuery" ng-click="viewContact(contact.id)">
           <img class="profile-picture" src="{{ contact.face }}" alt=""/>
           <p>
             <a ui-sref="user({userId: id})" class="post-author">

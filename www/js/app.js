@@ -100,11 +100,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     controller: 'NotificationsCtrl'
   })
 
-  // Contact list
-  .state('contacts', {
-    url: '/contacts',
-    templateUrl: 'templates/contacts.html',
-    controller: 'ContactsCtrl'
+  // Team list
+  .state('team', {
+    url: '/team',
+    templateUrl: 'templates/team.html',
+    controller: 'TeamCtrl'
   })
 
   // User profile

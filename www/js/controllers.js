@@ -130,7 +130,7 @@ angular.module('starter.controllers', [])
 })
 
 // ContactsCtrl controller
-.controller('ContactsCtrl', function($scope, Contacts, $state) {
+.controller('TeamCtrl', function($scope, Contacts, $state) {
   // get list posts froms service
   $scope.contacts = Contacts.all();
 

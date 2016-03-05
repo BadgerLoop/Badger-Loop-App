@@ -58,9 +58,10 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get(0);
 
   $scope.sendMessage = function() {
+    var d = new Date();
     var message = {
       type: 'sent',
-      time: 'Just now',
+      time: d.toLocaleTimeString(),
       text: $scope.input.message
     };
 

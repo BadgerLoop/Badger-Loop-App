@@ -2,7 +2,7 @@ angular.module('starter.services', [])
 
   .factory('Chats', function ($riffle) {
     // Might use a resource here that returns a JSON array
-
+    var d = new Date();
     // Some fake testing data
     var chats = [
       {
@@ -13,13 +13,14 @@ angular.module('starter.services', [])
           {
             type: 'received',
             text: 'Hey! This is Betsy, the BadgerLoop\'s Pod',
-            image: ''
+            image: '',
+            time: d.toLocaleTimeString()
           },
           {
             type: 'received',
             text: 'Is there something I can help you with?',
-            image: ''
-            // time: 'Just now'
+            image: '',
+            time: d.toLocaleTimeString()
           }
         ]
       }
@@ -33,13 +34,15 @@ angular.module('starter.services', [])
         chats.splice(chats.indexOf(chat), 1);
       },
       addMsg: function(msg){
+        var d = new Date();
         console.log(msg);
         chats[0].messages.push(msg); //push input message
         var p = $riffle.call("message", msg.text); //send input message
         p.then(function(result){ //add return message to list
           chats[0].messages.push({
             'type': 'received',
-            'text': result
+            'text': result,
+            'time': d.toLocaleTimeString()
           });
         });
       },

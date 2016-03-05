@@ -12,7 +12,7 @@ angular.module('starter.controllers', [])
   $ionicSideMenuDelegate.canDragContent(false);
 })
 // Home controller
-.controller('HomeCtrl', function($scope, Posts, $state) {
+.controller('NewsCtrl', function($scope, Posts, $state) {
   // get list posts froms service
   $scope.posts = Posts.all();
 

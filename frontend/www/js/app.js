@@ -53,6 +53,14 @@ angular.module('starter', ['ionic', 'stripe.checkout', 'starter.controllers', 's
         controller: 'AuthCtrl'
     })
 
+     // register screen
+    .state('news', {
+        url: '/news',
+        templateUrl: 'templates/news.html',
+        controller: 'NewsCtrl'
+    })
+
+
     // website screen
     .state('website', {
         url: '/website',

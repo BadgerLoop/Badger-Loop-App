@@ -1,6 +1,6 @@
 {
   "name": "ionSocial",
-  "app_id": "deecb508",
+  "app_id": "0006324e",
   "gulpStartupTasks": [
     "sass",
     "watch"

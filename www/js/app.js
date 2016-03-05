@@ -1,5 +1,5 @@
 //STRIPE CHECKOUT 
-var SERVER_SIDE_URL             = "<SERVER_SIDE_URL>";
+var SERVER_SIDE_URL             = "sk_live_4Vb8kJwWGak7It7voSnT1TlL";
 var STRIPE_API_PUBLISHABLE_KEY  = "pk_live_fXAVXCShfBiNNmsb1nEiAxC2";
 
 // angular.module is a global place for creating, registering and retrieving Angular modules

@@ -3,149 +3,118 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('badger-loop', ['ionic','ionic.service.core', 'ionic-material', 'ngRiffle']);
+// 'starter.services' is found in services.js
+// 'starter.controllers' is found in controllers.js
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'nl2br', 'monospaced.elastic'])
 
-app.run(function ($ionicPlatform) {
+.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.disableScroll(true);
 
-    $ionicPlatform.ready(function () {
-        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-        // for form inputs)
-        if (window.cordova && window.cordova.plugins.Keyboard) {
-            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-        }
-        if (window.StatusBar) {
-            StatusBar.styleDefault();
-        }
-    });
-})
-
-.directive('input', function($timeout) {
-  return {
-    restrict: 'E',
-    scope: {
-      'returnClose': '=',
-      'onReturn': '&',
-      'onFocus': '&',
-      'onBlur': '&'
-    },
-    link: function(scope, element, attr) {
-      element.bind('focus', function(e) {
-        if (scope.onFocus) {
-          $timeout(function() {
-            scope.onFocus();
-          });
-        }
-      });
-      element.bind('blur', function(e) {
-        if (scope.onBlur) {
-          $timeout(function() {
-            scope.onBlur();
-          });
-        }
-      });
-      element.bind('keydown', function(e) {
-        if (e.which == 13) {
-          if (scope.returnClose) element[0].blur();
-          if (scope.onReturn) {
-            $timeout(function() {
-              scope.onReturn();
-            });
-          }
-        }
-      });
     }
-  }
+    if (window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+  });
 })
 
-app.config(function ($stateProvider, $urlRouterProvider) {
-    $stateProvider
+.config(function($stateProvider, $urlRouterProvider) {
 
-    .state('app', {
-        url: '/app',
-        abstract: true,
-        templateUrl: 'templates/menu.html',
-        controller: 'AppCtrl'
-    })
+  // Ionic uses AngularUI Router which uses the concept of states
+  // Learn more here: https://github.com/angular-ui/ui-router
+  // Set up the various states which the app can be in.
+  // Each state's controller can be found in controllers.js
+  $stateProvider
 
-    .state('app.lists', {
-        url: '/lists',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/lists.html',
-                controller: 'ListsCtrl'
-            }
-        }
-    })
-    .state('app.fundraising', {
-        url: '/fundraising',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/fundraising.html',
-                controller: 'FundCtrl'
-            }
-        }
-    })
-    .state('app.website', {
-        url: '/website',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/website.html',
-                controller: 'WebsiteCtrl'
-            }
-        }
-    })
+  // login screen
+  .state('login', {
+    url: '/login',
+    templateUrl: 'templates/login.html',
+    controller: 'AuthCtrl'
+  })
 
-    .state('app.motion', {
-        url: '/motion',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/motion.html',
-                controller: 'MotionCtrl'
-            }
-        }
-    })
+  // register screen
+  .state('register', {
+    url: '/register',
+    templateUrl: 'templates/register.html',
+    controller: 'AuthCtrl'
+  })
 
-    .state('app.components', {
-        url: '/components',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/components.html',
-                controller: 'ComponentsCtrl'
-            }
-        }
-    })
+  // Home screen
+  .state('home', {
+    url: '/home',
+    templateUrl: 'templates/home.html',
+    controller: 'HomeCtrl'
+  })
 
-    .state('app.extensions', {
-        url: '/extensions',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/extensions.html',
-                controller: 'ExtensionsCtrl'
-            }
-        }
-    })
+  // Recent posts
+  .state('recent_posts', {
+    url: '/recent-posts',
+    templateUrl: 'templates/recent-posts.html',
+    controller: 'HomeCtrl'
+  })
 
-    .state('app.ai', {
-        url: '/ai',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/ai.html',
-                controller: 'AICtrl'
-            }
-        }
-    })
-    ;
+  // Wall post
+  .state('wall_posts', {
+    url: '/wall-posts',
+    templateUrl: 'templates/wall-posts.html',
+    controller: 'HomeCtrl'
+  })
+
+  // View post detail
+  .state('post', {
+    url: '/post/:postId',
+    templateUrl: 'templates/post.html',
+    controller: 'PostCtrl'
+  })
+
+  // Chat list
+  .state('chats', {
+    url: '/chats',
+    templateUrl: 'templates/chats.html',
+    controller: 'ChatCtrl'
+  })
+
+  .state('chat-detail', {
+    url: '/chats/:chatId',
+    templateUrl: 'templates/chat-detail.html',
+    controller: 'ChatDetailCtrl'
+  })
+
+  // List of notifications
+  .state('notifications', {
+    url: '/notifications',
+    templateUrl: 'templates/notifications.html',
+    controller: 'NotificationsCtrl'
+  })
+
+  // Contact list
+  .state('contacts', {
+    url: '/contacts',
+    templateUrl: 'templates/contacts.html',
+    controller: 'ContactsCtrl'
+  })
+
+  // User profile
+  .state('user', {
+    url: '/user/:userId',
+    templateUrl: 'templates/user.html',
+    controller: 'UserCtrl'
+  })
+
+  // Setting page
+  .state('setting', {
+    url: '/setting',
+    templateUrl: 'templates/setting.html',
+    controller: 'SettingCtrl'
+  })
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/ai');
-})
+  $urlRouterProvider.otherwise('/home');
 
-// Config for Exis
-.config(function($riffleProvider){
-    $riffleProvider.setDomain("xs.demo.badgerloop.blapp.Container.blai");
-    // $riffleProvider.setFabricLocal();
-})
-.run(function($riffle){
-    $riffle.setToken("hUzpwpthlJWeHG9Kb9W8yhWodm-sYQvOijNMYqY2mOxoFfZ2BZb8E.QWd1NOxCVFhW249ODPVfZ2tZZk4ke8N.h.wochywzF.PNrYWsPwYDjfsTCfSmXx1JUAW.29uwwh2GirelkMABQ5ynckHtCwTxYoT39K5nkxtjoA-VWHN4_");
-    $riffle.join();   
 });

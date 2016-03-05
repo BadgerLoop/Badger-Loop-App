@@ -15,16 +15,10 @@ Feel Free to add more to this list of features to be added if you have any good 
 
 ##Getting Started
 
-install ionic:
+Run:
 
-	 npm install -g cordova ionic
-
-View the app in your browser:
-
-	ionic serve
-or
-
-	ionic serve --lab
+    $ npm install
+    $ bower install
 
 ## Build
 

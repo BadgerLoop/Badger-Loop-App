@@ -13,72 +13,17 @@ angular.module('starter.services', [])
         messages: [
           {
             type: 'received',
-            text: 'Hey, How are you? wanna hang out this friday?',
+            text: 'Hey! This is Betsy, the BadgerLoop\'s Pod',
             image: '',
-            time: 'Thursday 05:55 PM'
-          },
-          {
-            type: 'sent',
-            text: 'Good, Yes sure why not :D',
-            image: '',
-            time: 'Thursday 05:56 PM'
+            time: 'Just now'
           },
           {
             type: 'received',
-            text: 'Check out this view from my last trip',
-            image: '/img/thumb/canada.jpg',
-            time: 'Thursday 05:57 PM'
-          },
-          {
-            type: 'sent',
-            text: 'Looks Great is that view in Canada?',
+            text: 'Is there something I can help you with?',
             image: '',
-            time: 'Thursday 05:58 PM'
-          },
-          {
-            type: 'received',
-            text: 'Yes, it\'s in Canada',
-            image: '',
-            time: 'Thursday 05:57 PM'
+            time: 'Just now'
           }
         ]
-      },
-      {
-        id: 1,
-        name: 'Max Lynx',
-        lastText: 'Hey, it\'s me',
-        face: 'img/thumb/max.png'
-      },
-      {
-        id: 2,
-        name: 'Adam Bradleyson',
-        lastText: 'I should buy a boat',
-        face: 'img/thumb/adam.jpg'
-      },
-      {
-
-        d: 3,
-        name: 'Perry Governor',
-        lastText: 'Look at my mukluks!',
-        face: 'img/thumb/perry.png'
-      },
-      {
-        id: 4,
-        name: 'Mike Harrington',
-        lastText: 'This is wicked good ice cream.',
-        face: 'img/thumb/mike.png'
-      },
-      {
-        id: 5,
-        name: 'Ben Sparrow',
-        lastText: 'You on your way?',
-        face: 'img/thumb/ben.png'
-      },
-      {
-        id: 6,
-        name: 'Max Lynx',
-        lastText: 'Hey, it\'s me',
-        face: 'img/thumb/max.png'
       }
     ];
 

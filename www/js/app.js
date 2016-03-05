@@ -59,6 +59,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     controller: 'AuthCtrl'
   })
 
+  // Fund screen
+  .state('fundus', {
+    url: '/fundus',
+    templateUrl: 'templates/fundus.html',
+    controller: 'AuthCtrl'
+  })
   // Home screen
   .state('home', {
     url: '/home',

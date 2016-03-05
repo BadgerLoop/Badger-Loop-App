@@ -1,11 +1,13 @@
-// Ionic Starter App
+//STRIPE CHECKOUT 
+var SERVER_SIDE_URL             = "<SERVER_SIDE_URL>";
+var STRIPE_API_PUBLISHABLE_KEY  = "pk_live_fXAVXCShfBiNNmsb1nEiAxC2";
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'nl2br', 'monospaced.elastic', 'ngRiffle'])
+angular.module('starter', ['ionic', 'stripe.checkout', 'starter.controllers', 'starter.services', 'nl2br', 'monospaced.elastic', 'ngRiffle'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -23,10 +25,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     });
 })
 
-.config(function($stateProvider, $urlRouterProvider, $riffleProvider) {
+.config(function($stateProvider, $urlRouterProvider, $riffleProvider, StripeCheckoutProvider) {
 
     //Attach to Exis prod node
     $riffleProvider.setDomain("xs.demo.badgerloop.blapp.Container.blai");
+
+    //Stripe Checkouts
+    StripeCheckoutProvider.defaults({key: STRIPE_API_PUBLISHABLE_KEY});
 
     // Ionic uses AngularUI Router which uses the concept of states
     // Learn more here: https://github.com/angular-ui/ui-router
@@ -64,16 +69,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
     // Fund screen
     .state('fundus', {
-            url: '/fundus',
-            templateUrl: 'templates/fundus.html',
-            controller: 'AuthCtrl'
-        })
-        // Home screen
-        .state('home', {
-            url: '/home',
-            templateUrl: 'templates/home.html',
-            controller: 'HomeCtrl'
-        })
+        url: '/fundus',
+        templateUrl: 'templates/fundus.html',
+        controller: 'FundCtrl',
+        resolve: {
+          // checkout.js isn't fetched until this is resolved.
+          stripe: StripeCheckoutProvider.load
+        }
+    })
+    
+    // Home screen
+    .state('home', {
+        url: '/home',
+        templateUrl: 'templates/home.html',
+        controller: 'HomeCtrl'
+    })
 
     // Recent posts
     .state('recent_posts', {

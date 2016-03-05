@@ -111,7 +111,8 @@ angular.module('starter', ['ionic', 'stripe.checkout', 'starter.controllers', 's
     .state('post', {
         url: '/post/:postId',
         templateUrl: 'templates/post.html',
-        controller: 'PostCtrl'
+        controller: 'PostCtrl',
+        params: {postId: null}
     })
 
     // Chat list

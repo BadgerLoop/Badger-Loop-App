@@ -11,7 +11,12 @@ angular.module('starter.controllers', [])
   // disabled swipe menu
   $ionicSideMenuDelegate.canDragContent(false);
 })
-// Home controller
+// News controller
+.controller('HomeCtrl', function($scope, Posts, $state) {
+  
+})
+
+// News controller
 .controller('NewsCtrl', function($scope, Posts, $state) {
   // get list posts froms service
   $scope.posts = Posts.all();
@@ -101,9 +106,12 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('PostCtrl', function($scope, Posts, $state) {
+.controller('PostCtrl', function($scope, Posts, $state, $stateParams) {
+
+  console.log($stateParams.postId);
+
   // get list posts froms service
-  $scope.post = Posts.get(0);
+  $scope.post = Posts.get($stateParams.postId);
 
   // toggle like button
   $scope.toggleLike = function (post) {

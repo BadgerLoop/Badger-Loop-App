@@ -11,6 +11,7 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+<script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
 
     <!-- angular-nl2br js -->
     <script src="lib/angular-nl2br/angular-nl2br.min.js"></script>
@@ -19,7 +20,8 @@
     <script src="lib/angular-elastic/elastic.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
+    <!-- Cordova is bootstrapped by ionic-platform-web-client, uncomment this if you remove ionic-platform-web-client... -->
+<!-- <script src="cordova.js"></script> -->
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
@@ -78,7 +80,7 @@
               <a ui-sref="user({userId: 0})">
                 <img class="profile-picture" menu-close="" src="img/thumb/logobl.png">
                 <h4 style="color: white;">BadgerLoop</h4>
-              </a> <br />
+              </a> <br>
             </div>
           </div>
           <!-- Menu -->

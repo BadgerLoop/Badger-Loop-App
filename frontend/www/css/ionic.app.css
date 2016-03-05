@@ -6236,7 +6236,6 @@ button.item.item-button-right {
 .item-avatar .item-content,
 .item-avatar-left,
 .item-avatar-left .item-content {
-  background-color: #BDC3C7;
   padding-left: 72px;
   min-height: 72px; }
   .item-avatar > img:first-child,

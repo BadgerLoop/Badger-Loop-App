@@ -7,7 +7,7 @@ var STRIPE_API_PUBLISHABLE_KEY  = "pk_live_fXAVXCShfBiNNmsb1nEiAxC2";
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'stripe.checkout', 'starter.controllers', 'starter.services', 'nl2br', 'monospaced.elastic', 'ngRiffle', 'ngCordova'])
+angular.module('starter', ['ionic','ionic.service.core', 'stripe.checkout', 'starter.controllers', 'starter.services', 'nl2br', 'monospaced.elastic', 'ngRiffle', 'ngCordova'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {

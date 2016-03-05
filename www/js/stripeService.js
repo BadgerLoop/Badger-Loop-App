@@ -49,7 +49,7 @@ angular.module('starter.services')
         name: ProductMeta.title,
         description: ProductMeta.description,
         amount: Math.floor(ProductMeta.priceUSD*100),
-        image: "img/perry.png",
+        image: "img/thumb/logobl.png",
     };
 
     var handler = StripeCheckout.configure({
@@ -67,6 +67,7 @@ angular.module('starter.services')
             qToken.resolve(stripeToken);
         } else {
             //console.log("handler success - undefined")
+            console.log("ERROR_STRIPETOKEN_UNDEFINED");
             qToken.reject("ERROR_STRIPETOKEN_UNDEFINED");
         }
       }, function(error) {

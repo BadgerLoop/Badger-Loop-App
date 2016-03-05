@@ -1,21 +1,18 @@
 <ion-view view-title="Help Fund Us">
   <ion-content class="padding center">
 
-    <div class="padding">
-      <!-- <img class="profile-picture" src="img/thumb/logobl.png" class="circle"> -->
+    <div class="padding" style="text-align: center">
+      <img class="profile-picture" style="width: 100px; height: 100px;" src="img/thumb/logobl.png" class="circle">
       <h2>{{ProductMeta.title}}</h2>
       <h3>{{ProductMeta.description}}</h3>
     </div>
 
-    <!--
-    <label class="item item-input">
-      <span class="input-label">Amount in USD</span>
-      <input type="number" ng-model="ProductMeta.priceUSD" placeholder="Amount in USD" min="1" class="input-custom">
-    </label>
-    -->
-
     <p>
-      <button class="button button-full button-positive" ng-click="charge()">Buy for ${{ProductMeta.priceUSD}}</button>
+      <button class="button button-full button-positive" ng-click="charge(5)">Support $5</button>
+      <button class="button button-full button-positive" ng-click="charge(15)">Support $15</button>
+      <button class="button button-full button-positive" ng-click="charge(50)">Support $50</button>
+      <button class="button button-full button-positive" ng-click="charge(100)">Support $100</button>
+      <button class="button button-full button-positive" ng-click="charge(500)">Support $500</button>
     </p>
 
     <p class="padding">

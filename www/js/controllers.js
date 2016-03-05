@@ -156,8 +156,8 @@ angular.module('starter.controllers', [])
 // Funding controller
 .controller('FundCtrl', function($scope, StripeCharge){
   $scope.ProductMeta = {
-    title: "Awesome product",
-    description: "Yes it really is",
+    title: "BadgerLoop Fundraising",
+    description: "Thank you!",
     priceUSD: 1,
   };
 
@@ -166,8 +166,10 @@ angular.module('starter.controllers', [])
     message: "",
   };
 
-  $scope.charge = function() {
+  $scope.charge = function(amount) {
 
+    $scope.ProductMeta.priceUSD = amount;
+    console.log($scope.ProductMeta.priceUSD);
     $scope.status['loading'] = true;
     $scope.status['message'] = "Retrieving your Stripe Token...";
 

@@ -54,7 +54,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats, $ionicScrollDelegate, $ionicActionSheet, $timeout) {
-  //$scope.chat = Chats.get($stateParams.chatId);
+  $scope.chatadd = Chats;
   $scope.chat = Chats.get(0);
 
   $scope.sendMessage = function() {
@@ -67,7 +67,7 @@ angular.module('starter.controllers', [])
     $scope.input.message = '';
 
     // push to massages list
-    $scope.chat.messages.push(message);
+    Chats.addMsg(message);
 
     $ionicScrollDelegate.$getByHandle('mainScroll').scrollBottom();
   };

@@ -7,21 +7,19 @@ angular.module('starter.services', [])
     var chats = [
       {
         id: 0,
-        name: 'Ben Sparrow',
-        lastText: 'You on your way?',
-        face: 'img/thumb/ben.png',
+        name: 'Betsy',
+        face: 'img/thumb/logobl.png',
         messages: [
           {
             type: 'received',
             text: 'Hey! This is Betsy, the BadgerLoop\'s Pod',
-            image: '',
-            time: 'Just now'
+            image: ''
           },
           {
             type: 'received',
             text: 'Is there something I can help you with?',
-            image: '',
-            time: 'Just now'
+            image: ''
+            // time: 'Just now'
           }
         ]
       }
@@ -33,6 +31,10 @@ angular.module('starter.services', [])
       },
       remove: function (chat) {
         chats.splice(chats.indexOf(chat), 1);
+      },
+      addMsg: function(msg){
+        console.log(msg);
+        chats[0].messages.push(msg);
       },
       get: function (chatId) {
         for (var i = 0; i < chats.length; i++) {

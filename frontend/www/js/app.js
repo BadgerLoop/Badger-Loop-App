@@ -104,19 +104,20 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'st
         controller: 'HomeCtrl'
     })
 
-    // Wall post
-    .state('wall_posts', {
-        url: '/wall-posts',
-        templateUrl: 'templates/wall-posts.html',
-        controller: 'HomeCtrl'
-    })
-
     // View post detail
     .state('post', {
         url: '/post/:postId',
         templateUrl: 'templates/post.html',
         controller: 'PostCtrl',
         params: { postId: null }
+    })
+
+    // View post detail
+    .state('articles', {
+        url: '/articles/:name',
+        templateUrl: 'templates/articles.html',
+        controller: 'ArticlesCtrl',
+        params: { link: null, name: null }
     })
 
     // Chat list

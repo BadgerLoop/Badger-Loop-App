@@ -34,8 +34,13 @@ angular.module('starter.controllers', [])
   }
 
   // view post
-  $scope.viewPost = function(postId) {
-    $state.go('post', {postId: postId});
+  $scope.viewPost = function(post) {
+    //Open in different viewer
+    if(post.isArticle){
+      $state.go('articles', {link: post.link, name: post.name});
+    }else{
+      $state.go('post', {postId: post.id});
+    } 
   }
 
   // view user
@@ -129,6 +134,13 @@ angular.module('starter.controllers', [])
   $scope.viewUser = function(userId) {
     $state.go('user', {userId: userId});
   }
+})
+
+.controller('ArticlesCtrl', function($scope, Posts, $state, $stateParams, $sce) {
+  // set up variables
+  $scope.link = $sce.trustAsResourceUrl($stateParams.link);
+  $scope.name = $stateParams.name;
+  console.log($scope.link, $scope.name);
 })
 
 // Notifications controller

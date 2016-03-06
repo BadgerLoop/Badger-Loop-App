@@ -9,7 +9,7 @@
     "face": "img/thumb/logobl.png",
     "time": "January 1, 2016"
 },{
-    "id": 3,
+    "id": 4,
     "isArticle": true,
     "user_id": 2,
     "link": "http://www.geekwire.com/2016/mit-leads-in-first-round-of-spacexs-hyperloop-contest-but-uw-is-in-the-race/",
@@ -20,7 +20,7 @@
     "face": "img/articles/geekwire.png",
     "time": "January 31, 2016"
 },{
-    "id": 4,
+    "id": 6,
     "isArticle": true,
     "user_id": 2,
     "link": "http://www.popsci.com/behind-scenes-at-spacexs-hyperloop-pod-competition",
@@ -53,7 +53,7 @@
     "face": "img/articles/bloomberg.png",
     "time": "January 30, 2016"
 },{
-    "id": 2,
+    "id": 3,
     "isArticle": true,
     "user_id": 2,
     "link": "http://www.nbc15.com/home/headlines/Students-Compete-to-Change-the-Future-of-Transportation-366267801.html?ref=801",
@@ -64,7 +64,7 @@
     "face": "img/articles/nbc.png",
     "time": "January 31, 2016"
 },{
-    "id": 2,
+    "id": 5,
     "isArticle": true,
     "user_id": 2,
     "link": "http://news.wisc.edu/uw-madison-places-among-top-teams-in-spacex-hyperloop-competition/",
@@ -72,10 +72,10 @@
     "title": "UW-Madison places among top teams in SpaceX Hyperloop competition",
     "content": "A team of University of Wisconsin—Madison engineering students won 3rd place overall in a worldwide competition to design a pod for shuttling people on a futuristic high-speed transportation system known as the Hyperloop. The UW–Madison BadgerLoop team competed against more than 115 student teams at the first-ever SpaceX Hyperloop pod design competition held Jan. 29-30 at Texas A&M University. The teams came from 27 U.S. states and 20 countries.",
     "image": "img/trophy.jpg",
-    "face": "img/articles/nbc.png",
+    "face": "img/articles/wisc.png",
     "time": "February 3, 2016"
 },{
-    "id": 2,
+    "id": 7,
     "isArticle": true,
     "user_id": 2,
     "link": "http://news.wisc.edu/uw-madison-places-among-top-teams-in-spacex-hyperloop-competition/",
@@ -83,6 +83,17 @@
     "title": "See the Futuristic Pods That Could Change How We Travel",
     "content": "The University of Wisconsin's pod \"is designed from the ground up to be completely fail-safe and passenger friendly; it can stop within 200 feet with no power required.\"",
     "image": "img/trophy.jpg",
-    "face": "img/articles/nbc.png",
+    "face": "img/articles/time.png",
     "time": "February 4, 2016"
+},{
+    "id": 8,
+    "isArticle": true,
+    "user_id": 2,
+    "link": "http://news.wisc.edu/uw-madison-places-among-top-teams-in-spacex-hyperloop-competition/",
+    "name": "The Badger Herald",
+    "title": "BadgerLoop team prepares for next steps after success in Texas",
+    "content": "After placing third at Texas A&M University’s Design Weekend in January, University of Wisconsin’s BadgerLoop team hopes to take their HyperLoop pod design off the ground — literally.",
+    "image": "img/trophy.jpg",
+    "face": "img/articles/badgerherald.png",
+    "time": "February 15, 2016"
 }]

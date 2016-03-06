@@ -58,7 +58,7 @@ angular.module('starter.services', [])
 
     return {
         all: function() {
-            return $http.get('assets/posts.json').then(function(response){
+            return $http.get('js/data/posts.json').then(function(response){
                 posts = response.data;
                 return response.data;
             });

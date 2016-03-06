@@ -23,14 +23,24 @@ angular.module('starter.controllers', [])
     $scope.posts = data;
   });
 
-  $scope.sharePost = function(){
-    $cordovaSocialSharing
-    .share("Check out the BadgerLoop Team!", "The BadgerLoop team knows what they're doing!", null, 'https://badgerloop.com') // Share via native share sheet
-    .then(function(result) {
-      // Success!
-    }, function(err) {
-      // An error occured. Show a message to the user
-    });
+  $scope.sharePost = function(post){
+    if(post.isArticle){
+      $cordovaSocialSharing
+      .share("Check out the article BadgerLoop was mentioned in!", "The BadgerLoop team knows what they're doing!", null, post.link) // Share via native share sheet
+      .then(function(result) {
+        // Success!
+      }, function(err) {
+        // An error occured. Show a message to the user
+      });
+    }else{
+      $cordovaSocialSharing
+      .share("Check out the BadgerLoop Team!", "The BadgerLoop team knows what they're doing!", null, 'https://badgerloop.com') // Share via native share sheet
+      .then(function(result) {
+        // Success!
+      }, function(err) {
+        // An error occured. Show a message to the user
+      });
+    }
   }
 
   // view post

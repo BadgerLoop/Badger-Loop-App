@@ -9,7 +9,7 @@
     "face": "img/thumb/logobl.png",
     "time": "January 1, 2016"
 },{
-    "id": 1,
+    "id": 3,
     "isArticle": true,
     "user_id": 2,
     "link": "http://www.geekwire.com/2016/mit-leads-in-first-round-of-spacexs-hyperloop-contest-but-uw-is-in-the-race/",
@@ -20,25 +20,69 @@
     "face": "img/articles/geekwire.png",
     "time": "January 31, 2016"
 },{
-    "id": 2,
+    "id": 4,
     "isArticle": true,
     "user_id": 2,
     "link": "http://www.popsci.com/behind-scenes-at-spacexs-hyperloop-pod-competition",
     "name": "Popular Science",
     "title": "Behind the scenes at the SpaceX's Hyperloop Pod Competition",
-    "content": "Behind the scenes at the SpaceX's Hyperloop Pod Competition",
+    "content": "Highlights include Lockheed Martin, Halback wheels, and megnetic levitation",
     "image": "img/trophy.jpg",
     "face": "img/articles/popsci.png",
+    "time": "February 3, 2016"
+},{
+    "id": 1,
+    "isArticle": true,
+    "user_id": 2,
+    "link": "http://www.theverge.com/2016/1/30/10877442/elon-musk-spacex-hyperloop-competition-awards",
+    "name": "The Verge",
+    "title": "Elon Musk made a cameo",
+    "content": "...Pod Technical Excellence Awards: Badgerloop, University of Wisconsin at Madison...",
+    "image": "img/trophy.jpg",
+    "face": "img/articles/verge.png",
+    "time": "January 30, 2016"
+},{
+    "id": 2,
+    "isArticle": true,
+    "user_id": 2,
+    "link": "http://www.bloomberg.com/news/articles/2016-01-31/musk-greeted-as-rock-star-by-students-vying-to-design-hyperloop",
+    "name": "Bloomberg",
+    "title": "Musk Gets Rock Star Greeting From Students Vying to Design Hyperloop",
+    "content": "Teams from the Massachusetts Institute of Technology, Delft University in the Netherlands and the University of Wisconsin at Madison were among those winning a chance to build and test their pod designs for the “Hyperloop” transportation system proposed by billionaire Elon Musk. ",
+    "image": "img/trophy.jpg",
+    "face": "img/articles/bloomberg.png",
+    "time": "January 30, 2016"
+},{
+    "id": 2,
+    "isArticle": true,
+    "user_id": 2,
+    "link": "http://www.nbc15.com/home/headlines/Students-Compete-to-Change-the-Future-of-Transportation-366267801.html?ref=801",
+    "name": "NBC15",
+    "title": "BadgerLoop Prepares for Texas",
+    "content": "The BadgerLoop team is creating their version of SpaceX's Hyperloop concept, a new technology that uses air pressures to propel a transportation pod down a tube for fast travel. Brett Sjostrom, Co President of BadgerLoop explains this system like a tube system at a bank. Once the doorway to the tube is closed, the change in air pressure sends the pod shooting down the tube.",
+    "image": "img/trophy.jpg",
+    "face": "img/articles/nbc.png",
+    "time": "January 31, 2016"
+},{
+    "id": 2,
+    "isArticle": true,
+    "user_id": 2,
+    "link": "http://news.wisc.edu/uw-madison-places-among-top-teams-in-spacex-hyperloop-competition/",
+    "name": "Univeristy of Wisconsin News",
+    "title": "UW-Madison places among top teams in SpaceX Hyperloop competition",
+    "content": "A team of University of Wisconsin—Madison engineering students won 3rd place overall in a worldwide competition to design a pod for shuttling people on a futuristic high-speed transportation system known as the Hyperloop. The UW–Madison BadgerLoop team competed against more than 115 student teams at the first-ever SpaceX Hyperloop pod design competition held Jan. 29-30 at Texas A&M University. The teams came from 27 U.S. states and 20 countries.",
+    "image": "img/trophy.jpg",
+    "face": "img/articles/nbc.png",
     "time": "February 3, 2016"
 },{
     "id": 2,
     "isArticle": true,
     "user_id": 2,
-    "link": "http://www.popsci.com/behind-scenes-at-spacexs-hyperloop-pod-competition",
-    "name": "Popular Science",
-    "title": "Behind the scenes at the SpaceX's Hyperloop Pod Competition",
-    "content": "Behind the scenes at the SpaceX's Hyperloop Pod Competition",
+    "link": "http://news.wisc.edu/uw-madison-places-among-top-teams-in-spacex-hyperloop-competition/",
+    "name": "TIME",
+    "title": "See the Futuristic Pods That Could Change How We Travel",
+    "content": "The University of Wisconsin's pod \"is designed from the ground up to be completely fail-safe and passenger friendly; it can stop within 200 feet with no power required.\"",
     "image": "img/trophy.jpg",
-    "face": "img/articles/popsci.png",
-    "time": "February 3, 2016"
+    "face": "img/articles/nbc.png",
+    "time": "February 4, 2016"
 }]

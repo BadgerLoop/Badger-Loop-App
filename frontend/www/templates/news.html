@@ -16,6 +16,7 @@
     <div class="item item-body">
       <div ng-click="viewPost(post)">
         <img class="full-image" ng-if="post.image" src="{{ post.image }}">
+        <p style="font-weight: bold;">{{post.title}}</p>
         <p>{{ post.content | nl2br}}</p>
       </div>
       <div class="click-for-more">(Click to read more)</div>

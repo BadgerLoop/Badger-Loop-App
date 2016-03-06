@@ -22,12 +22,12 @@ angular.module('starter.controllers', [])
     ];
 
     $scope.timeline = [
-      { id: 1, title: 'Title 1', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus laoreet lacus quis tempor.', icon: 'icon ion-home', time: '28-08-2015'},
-      { id: 2, title: 'Title 2', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices aliquam est sed pharetra.', icon: 'icon ion-ios-heart', time: '20-08-2015'},
-      { id: 3, title: 'Title 3', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a velit ac eros suscipit lobortis.', icon: 'icon ion-ios-star', time: '19-08-2015'},
-      { id: 4, title: 'Title 4', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus enim nec convallis convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', icon: 'icon ion-plane', time: '18-08-2015'},
-      { id: 5, title: 'Title 5', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus enim nec convallis convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', icon: 'icon ion-ios-game-controller-a', time: '10-08-2015'},
-      { id: 6, title: 'Title 6', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus laoreet lacus quis tempor.', icon: 'icon ion-home', time: '02-08-2015'},
+      { id: 1, title: 'BadgerLoop Founded', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus laoreet lacus quis tempor.', icon: 'icon ion-home', time: '28-08-2015'},
+      { id: 2, title: 'First KickOff Meeting', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices aliquam est sed pharetra.', icon: 'icon ion-ios-heart', time: '20-08-2015'},
+      { id: 3, title: 'Preliminary Design Briefing Due', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a velit ac eros suscipit lobortis.', icon: 'icon ion-ios-star', time: '19-08-2015'},
+      { id: 4, title: 'Final Design Package Due', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus enim nec convallis convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', icon: 'icon ion-plane', time: '18-08-2015'},
+      { id: 5, title: 'Design Weekend', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus enim nec convallis convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', icon: 'icon ion-ios-game-controller-a', time: '10-08-2015'},
+      { id: 6, title: 'Competition Weekend', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus laoreet lacus quis tempor.', icon: 'icon ion-home', time: '02-08-2015'},
     ];
 
     $scope.cards = Array.prototype.slice.call(cardTypes, 0);

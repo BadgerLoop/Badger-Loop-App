@@ -16,6 +16,11 @@ angular.module('starter.controllers', [])
 
 })
 
+// Render controller
+.controller('RenderCtrl', function($scope, Posts, $state) {
+
+})
+
 // News controller
 .controller('NewsCtrl', function($scope, Posts, $state, $cordovaSocialSharing, $http) {
   // get list posts froms service

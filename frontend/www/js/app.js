@@ -97,6 +97,13 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'st
         controller: 'HomeCtrl'
     })
 
+    // Home screen
+    .state('render', {
+        url: '/render',
+        templateUrl: 'templates/render.html',
+        controller: 'RenderCtrl'
+    })
+
     // Recent posts
     .state('recent_posts', {
         url: '/recent-posts',
@@ -172,39 +179,39 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'st
 })
 
 .run(function($ionicLoading) {
-    var deploy = new Ionic.Deploy();
-    console.log('Ionic Deploy: Checking for updates');
-    $ionicLoading.show({
-      template: 'Checking for updates...'
-    });
-    deploy.check().then(function(hasUpdate) {
-        console.log('Ionic Deploy: Update available: ' + hasUpdate);
-        deploy.update().then(function(res) {
-            console.log('Ionic Deploy: Update Success! ', res);
-            $ionicLoading.show({
-              template: 'Update Success!',
-              duration: 2000
-            });
-        }, function(err) {
-            console.log('Ionic Deploy: Update error! ', err);
-            $ionicLoading.show({
-              template: 'Update Error :(',
-              duration: 2000
-            });
-        }, function(prog) {
-            console.log('Ionic Deploy: Progress... ', prog);
-            $ionicLoading.show({
-                template: "Updating:\n" + prog + "%"
-            });
-        });
-    }, function(err) {
-        console.error('Ionic Deploy: Unable to check for updates', err);
-        $ionicLoading.show({
-          template: 'Unable to check for updates',
-          duration: 2000
-        });
-    });
+    // var deploy = new Ionic.Deploy();
+    // console.log('Ionic Deploy: Checking for updates');
+    // $ionicLoading.show({
+    //   template: 'Checking for updates...'
+    // });
+    // deploy.check().then(function(hasUpdate) {
+    //     console.log('Ionic Deploy: Update available: ' + hasUpdate);
+    //     deploy.update().then(function(res) {
+    //         console.log('Ionic Deploy: Update Success! ', res);
+    //         $ionicLoading.show({
+    //           template: 'Update Success!',
+    //           duration: 2000
+    //         });
+    //     }, function(err) {
+    //         console.log('Ionic Deploy: Update error! ', err);
+    //         $ionicLoading.show({
+    //           template: 'Update Error :(',
+    //           duration: 2000
+    //         });
+    //     }, function(prog) {
+    //         console.log('Ionic Deploy: Progress... ', prog);
+    //         $ionicLoading.show({
+    //             template: "Updating:\n" + prog + "%"
+    //         });
+    //     });
+    // }, function(err) {
+    //     console.error('Ionic Deploy: Unable to check for updates', err);
+    //     $ionicLoading.show({
+    //       template: 'Unable to check for updates',
+    //       duration: 2000
+    //     });
+    // });
 
-    $ionicLoading.hide();
+    // $ionicLoading.hide();
 
 });

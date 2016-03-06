@@ -16,7 +16,7 @@ angular.module('starter.controllers', [])
 .controller('HomeCtrl', function($scope, TDCardDelegate, $state) {
     console.log('CARDS CTRL');
     var cardTypes = [
-        { image: 'img/podoverview.png', link: 'https://sketchfab.com/models/3767339accc642268061291457c2a21f/embed?autostart=1', name: 'Pod Overview'},
+        { image: 'img/podbg.jpg', link: 'https://sketchfab.com/models/3767339accc642268061291457c2a21f/embed?autostart=1', name: 'Pod Overview'},
         { image: 'img/trophy.jpg', link: 'https://sketchfab.com/models/3767339accc642268061291457c2a21f/embed?autostart=1', name: 'Trophy'},
         { image: 'img/BadgerLoopLogo.png', link: 'https://sketchfab.com/models/3767339accc642268061291457c2a21f/embed?autostart=1', name: 'BadgerLoop Logo'}
     ];

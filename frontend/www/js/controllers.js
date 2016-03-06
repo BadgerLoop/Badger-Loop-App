@@ -1,5 +1,6 @@
 angular.module('starter.controllers', [])
 
+
 // Authentication controller
 // Put your login, register functions here
 .controller('AuthCtrl', function($scope, $ionicHistory, $ionicSideMenuDelegate) {
@@ -12,12 +13,12 @@ angular.module('starter.controllers', [])
     $ionicSideMenuDelegate.canDragContent(false);
 })
 
-.controller('HomeCtrl', function($scope, TDCardDelegate) {
+.controller('HomeCtrl', function($scope, TDCardDelegate, $state) {
     console.log('CARDS CTRL');
     var cardTypes = [
-        { image: 'img/podoverview.png' },
-        { image: 'img/trophy.jpg' },
-        { image: 'img/BadgerLoopLogo.png' }
+        { image: 'img/podoverview.png', link: 'https://sketchfab.com/models/3767339accc642268061291457c2a21f/embed?autostart=1', name: 'Pod Overview'},
+        { image: 'img/trophy.jpg', link: 'https://sketchfab.com/models/3767339accc642268061291457c2a21f/embed?autostart=1', name: 'Trophy'},
+        { image: 'img/BadgerLoopLogo.png', link: 'https://sketchfab.com/models/3767339accc642268061291457c2a21f/embed?autostart=1', name: 'BadgerLoop Logo'}
     ];
 
     $scope.cards = Array.prototype.slice.call(cardTypes, 0);
@@ -31,10 +32,6 @@ angular.module('starter.controllers', [])
         newCard.id = Math.random();
         $scope.cards.push(angular.extend({}, newCard));
     }
-})
-
-
-.controller('CardCtrl', function($scope, TDCardDelegate) {
     $scope.cardSwipedLeft = function(index) {
         console.log('LEFT SWIPE');
         $scope.addCard();
@@ -42,12 +39,14 @@ angular.module('starter.controllers', [])
     $scope.cardSwipedRight = function(index) {
         console.log('RIGHT SWIPE');
         $scope.addCard();
+        $state.go('render', { link: $scope.cards[index].link, name: $scope.cards[index].name });
     };
 })
 
 // Render controller
-.controller('RenderCtrl', function($scope, Posts, $state) {
-
+.controller('RenderCtrl', function($scope, $state, $sce, $stateParams) {
+    $scope.link = $sce.trustAsResourceUrl($stateParams.link);
+    $scope.name = $stateParams.name;
 })
 
 // News controller

@@ -99,9 +99,10 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'st
 
     // Home screen
     .state('render', {
-        url: '/render',
+        url: '/render/:name',
         templateUrl: 'templates/render.html',
-        controller: 'RenderCtrl'
+        controller: 'RenderCtrl',
+        params: {link: null, name: null }
     })
 
     // Recent posts

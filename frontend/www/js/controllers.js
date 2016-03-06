@@ -14,42 +14,18 @@ angular.module('starter.controllers', [])
 // News controller
 .controller('HomeCtrl', function($scope, Posts, $state) {
 
-  // Ionic.io(); 
-  // var deploy = new Ionic.Deploy();
-
-
-  
-  // // Update app code with new release from Ionic Deploy
-  // $scope.doUpdate = function() {
-  //   deploy.update().then(function(res) {
-  //     console.log('Ionic Deploy: Update Success! ', res);
-  //   }, function(err) {
-  //     console.log('Ionic Deploy: Update error! ', err);
-  //   }, function(prog) {
-  //     console.log('Ionic Deploy: Progress... ', prog);
-  //   });
-  // };
-
-  // // Check Ionic Deploy for new code
-  // $scope.checkForUpdates = function() {
-  //   console.log('Ionic Deploy: Checking for updates');
-  //   deploy.check().then(function(hasUpdate) {
-  //     console.log('Ionic Deploy: Update available: ' + hasUpdate);
-  //     $scope.hasUpdate = hasUpdate;
-  //   }, function(err) {
-  //     console.error('Ionic Deploy: Unable to check for updates', err);
-  //   });
-  // }
 })
 
 // News controller
-.controller('NewsCtrl', function($scope, Posts, $state, $cordovaSocialSharing) {
+.controller('NewsCtrl', function($scope, Posts, $state, $cordovaSocialSharing, $http) {
   // get list posts froms service
-  $scope.posts = Posts.all();
+  Posts.all().then(function(data){
+    $scope.posts = data;
+  });
 
   $scope.sharePost = function(){
     $cordovaSocialSharing
-    .share("Check out the BadgerLoop Team!", null, null, 'https://badgerloop.com') // Share via native share sheet
+    .share("Check out the BadgerLoop Team!", "The BadgerLoop team knows what they're doing!", null, 'https://badgerloop.com') // Share via native share sheet
     .then(function(result) {
       // Success!
     }, function(err) {

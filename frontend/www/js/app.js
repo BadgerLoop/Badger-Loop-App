@@ -20,8 +20,12 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'st
         }
         if (window.StatusBar) {
             // org.apache.cordova.statusbar required
-            StatusBar.styleDefault();
+            StatusBar.hide();
+            ionic.Platform.fullScreen();
         }
+        // if(ionic.Platform.isIOS()){
+        //     ionic.Platform.fullScreen();
+        // }
     });
 })
 

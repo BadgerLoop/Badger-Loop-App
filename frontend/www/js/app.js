@@ -1,13 +1,13 @@
 //STRIPE CHECKOUT 
-var SERVER_SIDE_URL             = "https://nameless-cove-34816.herokuapp.com";
-var STRIPE_API_PUBLISHABLE_KEY  = "pk_live_fXAVXCShfBiNNmsb1nEiAxC2";
+var SERVER_SIDE_URL = "https://nameless-cove-34816.herokuapp.com";
+var STRIPE_API_PUBLISHABLE_KEY = "pk_live_fXAVXCShfBiNNmsb1nEiAxC2";
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic','ionic.service.core', 'stripe.checkout', 'starter.controllers', 'starter.services', 'nl2br', 'monospaced.elastic', 'ngRiffle', 'ngCordova'])
+angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'starter.controllers', 'starter.services', 'nl2br', 'monospaced.elastic', 'ngRiffle', 'ngCordova'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -31,7 +31,7 @@ angular.module('starter', ['ionic','ionic.service.core', 'stripe.checkout', 'sta
     $riffleProvider.setDomain("xs.demo.badgerloop.blapp.Container.blai");
 
     //Stripe Checkouts
-    StripeCheckoutProvider.defaults({key: STRIPE_API_PUBLISHABLE_KEY});
+    StripeCheckoutProvider.defaults({ key: STRIPE_API_PUBLISHABLE_KEY });
 
     // Ionic uses AngularUI Router which uses the concept of states
     // Learn more here: https://github.com/angular-ui/ui-router
@@ -53,7 +53,7 @@ angular.module('starter', ['ionic','ionic.service.core', 'stripe.checkout', 'sta
         controller: 'AuthCtrl'
     })
 
-     // register screen
+    // register screen
     .state('news', {
         url: '/news',
         templateUrl: 'templates/news.html',
@@ -81,11 +81,11 @@ angular.module('starter', ['ionic','ionic.service.core', 'stripe.checkout', 'sta
         templateUrl: 'templates/fundus.html',
         controller: 'FundCtrl',
         resolve: {
-          // checkout.js isn't fetched until this is resolved.
-          stripe: StripeCheckoutProvider.load
+            // checkout.js isn't fetched until this is resolved.
+            stripe: StripeCheckoutProvider.load
         }
     })
-    
+
     // Home screen
     .state('home', {
         url: '/home',
@@ -112,7 +112,7 @@ angular.module('starter', ['ionic','ionic.service.core', 'stripe.checkout', 'sta
         url: '/post/:postId',
         templateUrl: 'templates/post.html',
         controller: 'PostCtrl',
-        params: {postId: null}
+        params: { postId: null }
     })
 
     // Chat list
@@ -164,4 +164,39 @@ angular.module('starter', ['ionic','ionic.service.core', 'stripe.checkout', 'sta
 .run(function($riffle) {
     $riffle.setToken("hUzpwpthlJWeHG9Kb9W8yhWodm-sYQvOijNMYqY2mOxoFfZ2BZb8E.QWd1NOxCVFhW249ODPVfZ2tZZk4ke8N.h.wochywzF.PNrYWsPwYDjfsTCfSmXx1JUAW.29uwwh2GirelkMABQ5ynckHtCwTxYoT39K5nkxtjoA-VWHN4_");
     $riffle.join();
+})
+
+.run(function($ionicLoading) {
+    var deploy = new Ionic.Deploy();
+    console.log('Ionic Deploy: Checking for updates');
+    $ionicLoading.show({
+      template: 'Checking for updates...'
+    });
+    deploy.check().then(function(hasUpdate) {
+        console.log('Ionic Deploy: Update available: ' + hasUpdate);
+        deploy.update().then(function(res) {
+            console.log('Ionic Deploy: Update Success! ', res);
+            $ionicLoading.show({
+              template: 'Update Success!',
+              duration: 2000
+            });
+        }, function(err) {
+            console.log('Ionic Deploy: Update error! ', err);
+            $ionicLoading.show({
+              template: 'Update Error :(',
+              duration: 2000
+            });
+        }, function(prog) {
+            console.log('Ionic Deploy: Progress... ', prog);
+        });
+    }, function(err) {
+        console.error('Ionic Deploy: Unable to check for updates', err);
+        $ionicLoading.show({
+          template: 'Unable to check for updates',
+          duration: 2000
+        });
+    });
+
+    $ionicLoading.hide();
+
 });

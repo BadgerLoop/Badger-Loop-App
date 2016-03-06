@@ -57,26 +57,6 @@ angular.module('starter.controllers', [])
       $state.go('post', {postId: post.id});
     } 
   }
-
-  // view user
-  $scope.viewUser = function(userId) {
-    $state.go('user', {userId: userId});
-  }
-})
-
-// Chat controller, view list chats and chat detail
-.controller('ChatCtrl', function($scope, Chats) {
-  $scope.chats = Chats.all();
-
-  // remove a conversation
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
-
-  // mute a conversation
-  $scope.mute = function(chat) {
-    // write your code here
-  }
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats, $ionicScrollDelegate, $ionicActionSheet, $timeout) {
@@ -133,22 +113,6 @@ angular.module('starter.controllers', [])
 
   // get list posts froms service
   $scope.post = Posts.get($stateParams.postId);
-
-  // toggle like button
-  $scope.toggleLike = function (post) {
-    // if user liked
-    if(post.liked) {
-      post.likeCount--;
-    } else {
-      post.likeCount++;
-    }
-    post.liked = !post.liked;
-  };
-
-  // view user function
-  $scope.viewUser = function(userId) {
-    $state.go('user', {userId: userId});
-  }
 })
 
 .controller('ArticlesCtrl', function($scope, Posts, $state, $stateParams, $sce) {
@@ -173,20 +137,6 @@ angular.module('starter.controllers', [])
   $scope.viewContact = function(contactId) {
     $state.go('user', {userId: contactId});
   }
-})
-
-// UserCtrl controller
-.controller('UserCtrl', function($scope, Contacts, Posts, $stateParams) {
-  // get contact from Contacts service
-  // set the userId here
-  $scope.user = Contacts.get(0);
-  // attach post to this contact
-  angular.extend($scope.user, {
-    'followers': 199,
-    'following': 48,
-    'favorites': 14,
-    'posts': Posts.all()
-  });
 })
 
 // Funding controller

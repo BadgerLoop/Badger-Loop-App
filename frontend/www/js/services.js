@@ -58,7 +58,7 @@ angular.module('starter.services', [])
 
     return {
         all: function() {
-            return $http.get('js/data/posts.json').then(function(response){
+            return $http.get('js/data/posts.json').then(function(response) {
                 posts = response.data;
                 return response.data;
             });
@@ -77,123 +77,64 @@ angular.module('starter.services', [])
     };
 })
 
-.factory('Notifications', function() {
-        // fake data
-        var notifications = [{
-            id: 1,
-            type: 'liked',
-            user_id: 2,
-            name: 'Max Lynx',
-            face: 'img/thumb/max.png',
-            read: false,
-            time: 'Just now'
-        }, {
-            id: 2,
-            type: 'commented',
-            user_id: 2,
-            name: 'Adam Bradleyson',
-            face: 'img/thumb/adam.jpg',
-            read: true,
-            time: '3 minutes ago'
-        }, {
-            id: 3,
-            type: 'friend_request',
-            user_id: 2,
-            name: 'Perry Governor',
-            face: 'img/thumb/perry.png',
-            read: true,
-            time: '5 minutes ago'
-        }, {
-            id: 4,
-            type: 'liked',
-            user_id: 2,
-            name: 'Ben Sparrow',
-            face: 'img/thumb/ben.png',
-            read: false,
-            time: '6 minutes ago'
-        }, {
-            id: 5,
-            type: 'friend_request',
-            user_id: 2,
-            name: 'Perry Governor',
-            face: 'img/thumb/perry.png',
-            read: true,
-            time: '5 minutes ago'
-        }, {
-            id: 6,
-            type: 'liked',
-            user_id: 2,
-            name: 'Ben Sparrow',
-            face: 'img/thumb/ben.png',
-            read: false,
-            time: '6 minutes ago'
-        }];
+.factory('Contacts', function() {
+    // Some fake testing data
+    var contacts = [{
+        id: 0,
+        name: 'Ben Sparrow',
+        lastText: 'You on your way?',
+        face: 'img/thumb/ben.png',
+        group: 'Friend'
+    }, {
+        id: 1,
+        name: 'Max Lynx',
+        lastText: 'Hey, it\'s me',
+        face: 'img/thumb/max.png',
+        group: 'Family'
+    }, {
+        id: 2,
+        name: 'Adam Bradleyson',
+        lastText: 'I should buy a boat',
+        face: 'img/thumb/adam.jpg',
+        group: 'Friend'
+    }, {
 
-        return {
-            all: function() {
-                return notifications
-            }
-        };
+        d: 3,
+        name: 'Perry Governor',
+        lastText: 'Look at my mukluks!',
+        face: 'img/thumb/perry.png',
+        group: 'Friend'
+    }, {
+        id: 4,
+        name: 'Mike Harrington',
+        lastText: 'This is wicked good ice cream.',
+        face: 'img/thumb/mike.png',
+        group: 'Family'
+    }, {
+        id: 5,
+        name: 'Ben Sparrow',
+        lastText: 'You on your way?',
+        face: 'img/thumb/ben.png',
+        group: 'Friend'
+    }, {
+        id: 6,
+        name: 'Max Lynx',
+        lastText: 'Hey, it\'s me',
+        face: 'img/thumb/max.png',
+        group: 'Family'
+    }];
 
-    })
-    .factory('Contacts', function() {
-        // Some fake testing data
-        var contacts = [{
-            id: 0,
-            name: 'Ben Sparrow',
-            lastText: 'You on your way?',
-            face: 'img/thumb/ben.png',
-            group: 'Friend'
-        }, {
-            id: 1,
-            name: 'Max Lynx',
-            lastText: 'Hey, it\'s me',
-            face: 'img/thumb/max.png',
-            group: 'Family'
-        }, {
-            id: 2,
-            name: 'Adam Bradleyson',
-            lastText: 'I should buy a boat',
-            face: 'img/thumb/adam.jpg',
-            group: 'Friend'
-        }, {
-
-            d: 3,
-            name: 'Perry Governor',
-            lastText: 'Look at my mukluks!',
-            face: 'img/thumb/perry.png',
-            group: 'Friend'
-        }, {
-            id: 4,
-            name: 'Mike Harrington',
-            lastText: 'This is wicked good ice cream.',
-            face: 'img/thumb/mike.png',
-            group: 'Family'
-        }, {
-            id: 5,
-            name: 'Ben Sparrow',
-            lastText: 'You on your way?',
-            face: 'img/thumb/ben.png',
-            group: 'Friend'
-        }, {
-            id: 6,
-            name: 'Max Lynx',
-            lastText: 'Hey, it\'s me',
-            face: 'img/thumb/max.png',
-            group: 'Family'
-        }];
-
-        return {
-            all: function() {
-                return contacts
-            },
-            get: function(contactId) {
-                for (var i = 0; i < contacts.length; i++) {
-                    if (contacts[i].id === parseInt(contactId)) {
-                        return contacts[i];
-                    }
+    return {
+        all: function() {
+            return contacts
+        },
+        get: function(contactId) {
+            for (var i = 0; i < contacts.length; i++) {
+                if (contacts[i].id === parseInt(contactId)) {
+                    return contacts[i];
                 }
-                return null;
             }
+            return null;
         }
-    });
+    }
+});

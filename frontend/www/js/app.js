@@ -193,6 +193,9 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'st
             });
         }, function(prog) {
             console.log('Ionic Deploy: Progress... ', prog);
+            $ionicLoading.show({
+                template: "Updating:\n" + prog + "%"
+            });
         });
     }, function(err) {
         console.error('Ionic Deploy: Unable to check for updates', err);

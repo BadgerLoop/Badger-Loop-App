@@ -21,6 +21,15 @@ angular.module('starter.controllers', [])
         { image: 'img/BadgerLoopLogo.png', link: 'https://sketchfab.com/models/3767339accc642268061291457c2a21f/embed?autostart=1', name: 'BadgerLoop Logo'}
     ];
 
+    $scope.items = [
+      { id: 1, title: 'Title 1', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus laoreet lacus quis tempor.', icon: 'icon ion-home', time: '28-08-2015'},
+      { id: 2, title: 'Title 2', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices aliquam est sed pharetra.', icon: 'icon ion-ios-heart', time: '20-08-2015'},
+      { id: 3, img: 'http://41.media.tumblr.com/c0f54d52d7070a3801b4d926cd4ba71e/tumblr_nphz25UrRh1qd3hr1o1_1280.jpg', title: 'Title 3', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a velit ac eros suscipit lobortis.', icon: 'icon ion-ios-star', time: '19-08-2015'},
+      { id: 4, title: 'Title 4', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus enim nec convallis convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', icon: 'icon ion-plane', time: '18-08-2015'},
+      { id: 5, title: 'Title 5', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus enim nec convallis convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', icon: 'icon ion-ios-game-controller-a', time: '10-08-2015'},
+      { id: 6, title: 'Title 6', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus laoreet lacus quis tempor.', icon: 'icon ion-home', time: '02-08-2015'},
+    ];
+
     $scope.cards = Array.prototype.slice.call(cardTypes, 0);
 
     $scope.cardDestroyed = function(index) {

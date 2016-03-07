@@ -1,6 +1,6 @@
 <ion-view view-title="BadgerLoop">
     <ion-content overflow-scroll="true" class="home-pane">
-	    <div class="bar bar-header home-header">
+	    <div class="deckheader bar bar-header home-header">
             <h1 class="title">Swipe Left or Right to See Render</h1>
 	        <td-cards>
 	            <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}">

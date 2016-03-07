@@ -11,6 +11,9 @@
   font-style: italic;
 }
 
+.deckheader{
+    background:black;
+}
 .bar-subheader {
     top: 300px;
     background: #E6DADA;

@@ -12,7 +12,7 @@
 }
 
 .deckheader{
-    background:black;
+    background:black !important;
 }
 .bar-subheader {
     top: 300px;

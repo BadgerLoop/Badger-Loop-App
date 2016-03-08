@@ -7,7 +7,7 @@
 <ion-view view-title="Betsy" class="chat-detail">
   <ion-content class="padding" delegate-handle="mainScroll">
     <div ng-repeat="message in chat.messages" class="message-wrapper rlt"
-         on-hold="onMessageHold($event, $index, message)">
+         on-hold="onMessageHold($event, $index, message)" ng-click="shouldNotFocusOnBlur()">
 
       <div ng-if="message.type == 'received'">
 
@@ -55,7 +55,9 @@
         <button class="button button-icon icon ion-android-attach"></button>
       </div>
       <label class="item-input-wrapper">
-        <textarea ng-model="input.message" value="" placeholder="Send {{chat.name}} a message..."
+        <textarea ng-model="input.message" value="" 
+        detect-focus on-blur="scrollContentToBottom()" focus-on-blur="focusManager.focusInputOnBlur"
+                   placeholder="Send {{chat.name}} a message..."
                   required minlength="1" maxlength="1500" msd-elastic></textarea>
       </label>
       <div class="footer-btn-wrap">

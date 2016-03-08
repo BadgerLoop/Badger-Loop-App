@@ -99,6 +99,7 @@ angular.module('starter.controllers', [])
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats, $ionicScrollDelegate, $ionicActionSheet, $timeout) {
     $scope.chatadd = Chats;
     $scope.chat = Chats.get(0);
+    $scope.focusManager = {focusInputOnBlur: true};
 
     $scope.sendMessage = function() {
         var d = new Date();
@@ -112,6 +113,11 @@ angular.module('starter.controllers', [])
 
         // push to massages list
         Chats.addMsg(message);
+    };
+
+    $scope.shouldNotFocusOnBlur = function() {
+        console.log("should not focus");
+      $scope.focusManager.focusInputOnBlur = false;
     };
 
     // hover menu

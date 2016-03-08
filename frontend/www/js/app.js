@@ -179,6 +179,30 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'st
     $riffle.join();
 })
 
+   .directive("detectFocus", function () {
+        return {
+            restrict: "A",
+            scope: {
+                onFocus: '&onFocus',
+                onBlur: '&onBlur',
+                focusOnBlur: '=focusOnBlur'
+            },
+            link: function (scope, elem) {
+
+                elem.on("focus", function () {
+                    scope.onFocus();
+                    scope.focusOnBlur = true;  //note the reassignment here, reason why I set '=' instead of '@' above.
+                });
+
+                elem.on("blur", function () {
+                    scope.onBlur();
+                    if (scope.focusOnBlur)
+                        elem[0].focus();
+                });
+            }
+        }
+    })
+
 .run(function($ionicLoading) {
     // var deploy = new Ionic.Deploy();
     // console.log('Ionic Deploy: Checking for updates');

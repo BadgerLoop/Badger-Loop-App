@@ -13,17 +13,14 @@
         </label>
       </div>
       <ion-list class="contact-list">
-        <ion-item class="item-avatar item-icon-right" ng-repeat="contact in contacts | filter: searchQuery" ng-click="viewContact(contact.id)">
+        <ion-item class="item-avatar item-icon-right" ng-repeat="contact in contacts | filter: searchQuery | orderBy : 'name'" ng-click="viewContact(contact.id)">
           <img class="profile-picture" src="{{ contact.face }}" alt=""/>
           <p>
             <a ui-sref="user({userId: id})" class="post-author">
               {{ contact.name }}
             </a>
-            <span class="badge badge-positive" ng-if="contact.group == 'Family'">Family</span>
-            <span class="badge badge-energized" ng-if="contact.group == 'Friend'">Friend</span>
+           <span class="badge badge-positive" >{{contact.group}}</span>
           </p>
-
-          <i class="icon ion-chevron-right icon-accessory"></i>
 
           <ion-option-button class="button-stable ion-edit" ng-click="edit(contact)">
           </ion-option-button>

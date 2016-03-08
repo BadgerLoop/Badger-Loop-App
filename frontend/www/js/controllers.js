@@ -25,7 +25,7 @@ angular.module('starter.controllers', [])
     console.log('CARDS CTRL');
     var cardTypes = [
         { image: 'img/hallbachwheel.png', link: 'https://sketchfab.com/models/753e97d889b04378abfbadd7e5e5796a/embed?autostart=1', name: 'Hallbach Wheel'},
-        { image: 'img/trophy.jpg', link: 'https://sketchfab.com/models/3767339accc642268061291457c2a21f/embed?autostart=1', name: 'Trophy'},
+        { image: 'img/trophy.jpg', link: 'https://sketchfab.com/models/f8afc5ddc991445e854b3f0f46374999/embed?autostart=1', name: 'Battery Box - Fire Sys.'},
         { image: 'img/BadgerLoopLogo.png', link: 'https://sketchfab.com/models/3767339accc642268061291457c2a21f/embed?autostart=1', name: 'BadgerLoop Logo'}
     ];
 

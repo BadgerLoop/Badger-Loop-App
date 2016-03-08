@@ -19,8 +19,7 @@
             <a ui-sref="user({userId: id})" class="post-author">
               {{ contact.name }}
             </a>
-            <span class="badge badge-positive" ng-if="contact.group == 'Family'">Family</span>
-            <span class="badge badge-energized" ng-if="contact.group == 'Friend'">Friend</span>
+           <span class="badge badge-positive" >{{contact.group}}</span>
           </p>
 
           <i class="icon ion-chevron-right icon-accessory"></i>

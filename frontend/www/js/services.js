@@ -99,47 +99,130 @@ angular.module('starter.services', [])
     // Some fake testing data
     var contacts = [{
         id: 0,
-        name: 'Ben Sparrow',
-        lastText: 'You on your way?',
-        face: 'img/thumb/ben.png',
-        group: 'Friend'
+        name: 'Alex Ballister',
+        lastText: '',
+        face: 'img/team/Alex.jpg',
+        group: 'Safety Team'
     }, {
         id: 1,
-        name: 'Max Lynx',
-        lastText: 'Hey, it\'s me',
-        face: 'img/thumb/max.png',
-        group: 'Family'
+        name: 'Austin Jeffries',
+        lastText: '',
+        face: 'img/team/Austin.jpg',
+        group: 'Structural Team'
     }, {
         id: 2,
-        name: 'Adam Bradleyson',
-        lastText: 'I should buy a boat',
-        face: 'img/thumb/adam.jpg',
-        group: 'Friend'
+        name: 'Bill Carpenter',
+        lastText: '',
+        face: 'img/team/Bill.jpg',
+        group: 'Levitation Team'
     }, {
-
-        d: 3,
-        name: 'Perry Governor',
-        lastText: 'Look at my mukluks!',
-        face: 'img/thumb/perry.png',
-        group: 'Friend'
+        id: 3,
+        name: 'Brett Sjorstrom',
+        lastText: '',
+        face: 'img/team/Brett.jpg',
+        group: 'Co-President'
     }, {
         id: 4,
-        name: 'Mike Harrington',
-        lastText: 'This is wicked good ice cream.',
-        face: 'img/thumb/mike.png',
-        group: 'Family'
+        name: 'Chase Roossin',
+        lastText: '',
+        face: 'img/team/Chase_Roossin_Professional_Photo_SmallerCopy.jpeg',
+        group: 'Software Team'
     }, {
         id: 5,
-        name: 'Ben Sparrow',
-        lastText: 'You on your way?',
-        face: 'img/thumb/ben.png',
-        group: 'Friend'
+        name: 'Patrick Cummings',
+        lastText: '',
+        face: 'img/team/cummings.png',
+        group: 'Project Management Team'
     }, {
         id: 6,
-        name: 'Max Lynx',
-        lastText: 'Hey, it\'s me',
-        face: 'img/thumb/max.png',
-        group: 'Family'
+        name: 'David Van Veen',
+        lastText: '',
+        face: 'img/team/Dave.jpg',
+        group: 'Industry Team'
+    }, {
+        id: 7,
+        name: 'Michael Dircz',
+        lastText: '',
+        face: 'img/team/dircz.jpg',
+        group: 'Marketing Team'
+    }, {
+        id: 8,
+        name: 'Duncan Adams',
+        lastText: '',
+        face: 'img/team/Duncan.jpg',
+        group: 'Technical Director'
+    }, {
+        id: 9,
+        name: 'Eric Amikam',
+        lastText: '',
+        face: 'img/team/Eric.jpg',
+        group: 'Electrical Team'
+    }, {
+        id: 10,
+        name: 'Evan Bauch',
+        lastText: '',
+        face: 'img/team/Evan.jpg',
+        group: 'Mechanical Team'
+    }, {
+        id: 11,
+        name: 'Alec Fischer',
+        lastText: '',
+        face: 'img/team/fisher.png',
+        group: 'Levitation Team'
+    }, {
+        id: 12,
+        name: 'James Olson',
+        lastText: '',
+        face: 'img/team/James.jpg',
+        group: 'Team Finances'
+    }, {
+        id: 13,
+        name: 'Johnnie Wagman',
+        lastText: '',
+        face: 'img/team/Johnnie.jpg',
+        group: 'Composites Team'
+    }, {
+        id: 14,
+        name: 'Michael Knippen',
+        lastText: '',
+        face: 'img/team/Michael.jpg',
+        group: 'Project Management Team'
+    }, {
+        id: 15,
+        name: 'Seth Rueter',
+        lastText: '',
+        face: 'img/team/rueter.jpg',
+        group: 'Braking Team'
+    }, {
+        id: 16,
+        name: 'Brandon Schadrie',
+        lastText: '',
+        face: 'img/team/schadrie.jpg',
+        group: 'Mechanical Team'
+    }, {
+        id: 16,
+        name: 'Eric Schirtzinger',
+        lastText: '',
+        face: 'img/team/schirtzinger.jpg',
+        group: 'Video Production'
+    }, {
+        id: 17,
+        name: 'Jayce Schmidtknecht',
+        lastText: '',
+        face: 'img/team/schmidtknecht.jpg',
+        group: 'Mechanical Team'
+    }, {
+        id: 18,
+        name: 'Sid Smith',
+        lastText: '',
+        face: 'img/team/Sid.jpg',
+        group: 'Industry Team'
+    }, {
+        id: 19,
+        name: 'Tieler Callazo',
+        lastText: '',
+        face: 'img/team/Tieler.jpg',
+        group: 'Co-President'    
     }];
 
     return {

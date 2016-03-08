@@ -16,7 +16,6 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'st
         if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
             cordova.plugins.Keyboard.disableScroll(true);
-
         }
         if (window.StatusBar) {
             // org.apache.cordova.statusbar required
@@ -180,6 +179,7 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'st
 })
 
 .run(function($ionicLoading) {
+
     // var deploy = new Ionic.Deploy();
     // console.log('Ionic Deploy: Checking for updates');
     // $ionicLoading.show({

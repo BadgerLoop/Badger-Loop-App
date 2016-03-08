@@ -92,7 +92,7 @@
             </div>
           </div>
           <!-- Menu -->
-          <div class="list" menu-close="">
+          <div class="list" menu-close="" ng-controller="MenuCtrl">
             <div class="item item-icon-left" ui-sref="home">
               <i class="icon ion-ios-home-outline"></i>
               Home
@@ -104,21 +104,21 @@
             <div class="item item-icon-left" ui-sref="chat-detail">
               <i class="icon ion-ios-email-outline"></i>
               Message our Pod
-              <span class="badge badge-assertive">2</span>
+              <span class="badge badge-assertive">{{Chats.getNumUnread()&gt;0? Chats.getNumUnread(): &apos;&apos;}}</span>
             </div>
-            <div class="item item-icon-left" ui-sref="website">
+            <div class="item item-icon-left" onclick="window.open(&apos;https://www.badgerloop.com/&apos;, &apos;_blank&apos;, &apos;location=yes&apos;);">
               <i class="icon ion-ios-cloud-outline"></i>
               Website
               <span class="badge badge-assertive"></span>
             </div>
-            <div class="item item-icon-left" ui-sref="vr">
+            <div class="item item-icon-left" onclick="window.open(&apos;https://www.badgerloop.com/VR/&apos;, &apos;_blank&apos;, &apos;location=yes&apos;);">
               <i class="icon ion-ios-glasses-outline"></i>
               Virtual Reality
             </div>
-            <div class="item item-icon-left" ui-sref="team">
+<!--             <div class="item item-icon-left" ui-sref="team">
               <i class="icon ion-ios-people-outline"></i>
               Meet our Team
-            </div>
+            </div> -->
             <div class="item item-icon-left" ui-sref="fundus">
               <i class="icon ion-card"></i>
               Fund Us

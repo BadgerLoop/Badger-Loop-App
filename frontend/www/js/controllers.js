@@ -12,8 +12,16 @@ angular.module('starter.controllers', [])
     // disabled swipe menu
     $ionicSideMenuDelegate.canDragContent(false);
 })
+.controller('MenuCtrl', function($scope, Chats) {
+    // $scope.$on('$ionicView.afterEnter', function () {
+    //     $scope.unreadMsg = Chats.getNumUnread();
+    //     console.log('there are ' + $scope.unreadMsg + ' unread messagas' )
+    // });
+    $scope.Chats = Chats;
 
-.controller('HomeCtrl', function($scope, TDCardDelegate, $state) {
+})
+
+.controller('HomeCtrl', function($rootScope, $scope, TDCardDelegate, $state) {
     console.log('CARDS CTRL');
     var cardTypes = [
         { image: 'img/hallbachwheel.png', link: 'https://sketchfab.com/models/753e97d889b04378abfbadd7e5e5796a/embed?autostart=1', name: 'Hallbach Wheel'},
@@ -31,6 +39,7 @@ angular.module('starter.controllers', [])
     ];
 
     $scope.cards = Array.prototype.slice.call(cardTypes, 0);
+    $rootScope.unseenMsg = 2;
 
     $scope.cardDestroyed = function(index) {
         $scope.cards.splice(index, 1);
@@ -96,9 +105,40 @@ angular.module('starter.controllers', [])
     }
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats, $ionicScrollDelegate, $ionicActionSheet, $timeout) {
+.controller('ChatDetailCtrl', function($scope, $stateParams, Chats, $ionicScrollDelegate, $ionicActionSheet, $timeout, $ionicModal) {
     $scope.chatadd = Chats;
     $scope.chat = Chats.get(0);
+
+    $scope.$on('$ionicView.afterEnter', function () {
+        Chats.markAllRead();
+    });
+
+    $ionicModal.fromTemplateUrl('templates/chat-info-modal.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+        console.log('defined modal')
+    });
+
+    $scope.openModal = function() {
+    $scope.modal.show();
+    };
+    $scope.closeModal = function() {
+    $scope.modal.hide();
+    };
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+    // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+    // Execute action
+    });
 
     $scope.sendMessage = function() {
         var d = new Date();

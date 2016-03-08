@@ -25,7 +25,8 @@
       "locator": "https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git",
       "id": "cordova-plugin-x-socialsharing"
     },
-    "ionic-plugin-deploy"
+    "ionic-plugin-deploy",
+    "cordova-plugin-inappbrowser"
   ],
   "cordovaPlatforms": [
     "ios"

@@ -12,12 +12,14 @@ angular.module('starter.services', [])
             type: 'received',
             text: 'Hey! This is Betsy, the BadgerLoop\'s Pod',
             image: '',
-            time: d.toLocaleTimeString()
+            time: d.toLocaleTimeString(),
+            read: false
         }, {
             type: 'received',
             text: 'Is there something I can help you with?',
             image: '',
-            time: d.toLocaleTimeString()
+            time: d.toLocaleTimeString(),
+            read: false
         }]
     }];
 
@@ -35,7 +37,8 @@ angular.module('starter.services', [])
                 chats[0].messages.push({
                     'type': 'received',
                     'text': result,
-                    'time': d.toLocaleTimeString()
+                    'time': d.toLocaleTimeString(),
+                    'read': false
                 });
                 $ionicScrollDelegate.$getByHandle('mainScroll').scrollBottom();
             });
@@ -45,6 +48,21 @@ angular.module('starter.services', [])
                 if (chats[i].id === parseInt(chatId)) {
                     return chats[i];
                 }
+            }
+            return null;
+        },
+        getNumUnread: function() {
+        var num_unread = 0;
+         for (var i = 0; i < chats[0].messages.length; i++) {
+                if (chats[0].messages[i].read == false) {
+                    num_unread++;
+                }
+            }
+            return num_unread;
+        },
+        markAllRead: function() {
+         for (var i = 0; i < chats[0].messages.length; i++) {
+                chats[0].messages[i].read = true;
             }
             return null;
         }

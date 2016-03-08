@@ -24,9 +24,9 @@ angular.module('starter.controllers', [])
 .controller('HomeCtrl', function($rootScope, $scope, TDCardDelegate, $state) {
     console.log('CARDS CTRL');
     var cardTypes = [
-        { image: 'img/hallbachwheel.png', link: 'https://sketchfab.com/models/753e97d889b04378abfbadd7e5e5796a/embed?autostart=1', name: 'Hallbach Wheel'},
-        { image: 'img/trophy.jpg', link: 'https://sketchfab.com/models/f8afc5ddc991445e854b3f0f46374999/embed?autostart=1', name: 'Battery Box - Fire Sys.'},
-        { image: 'img/BadgerLoopLogo.png', link: 'https://sketchfab.com/models/7199f633568340c389c4cf1e92063c90/embed?autostart=1', name: 'Braking System'}
+        { image: 'img/halbachwheel.png', link: 'https://sketchfab.com/models/753e97d889b04378abfbadd7e5e5796a/embed?autostart=1', name: 'Hallbach Wheel'},
+        { image: 'img/batterybox.png', link: 'https://sketchfab.com/models/f8afc5ddc991445e854b3f0f46374999/embed?autostart=1', name: 'Battery Box'},
+        { image: 'img/Braking.png', link: 'https://sketchfab.com/models/7199f633568340c389c4cf1e92063c90/embed?autostart=1', name: 'Braking System'}
     ];
 
     $scope.timeline = [

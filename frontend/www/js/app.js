@@ -212,10 +212,6 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'st
 .run(function($ionicLoading) {
 
     // var deploy = new Ionic.Deploy();
-    // console.log('Ionic Deploy: Checking for updates');
-    // $ionicLoading.show({
-    //   template: 'Checking for updates...'
-    // });
     // deploy.check().then(function(hasUpdate) {
     //     console.log('Ionic Deploy: Update available: ' + hasUpdate);
     //     deploy.update().then(function(res) {

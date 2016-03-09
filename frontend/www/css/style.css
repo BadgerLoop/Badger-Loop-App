@@ -12,8 +12,12 @@
 }
 
 .deckheader{
-    background:black !important;
+    background:#140B0E !important;
     margin-bottom: 20px !important;
+}
+
+.tindertitle{
+    font-size: 13px !important;
 }
 .bar-subheader {
     top: 300px;

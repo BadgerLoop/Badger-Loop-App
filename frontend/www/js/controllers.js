@@ -264,8 +264,13 @@ angular.module('starter.controllers', [])
     $scope.contacts = Contacts.all();
 
     // view contact function
-    $scope.viewContact = function(contactId) {
-        $state.go('user', { userId: contactId });
+    $scope.viewContact = function(link) {
+        if (link != null && link != undefined){
+            window.open(link, '_blank', 'location=yes');
+        }
+        else{
+            console.log('no link')
+        }
     }
 })
 

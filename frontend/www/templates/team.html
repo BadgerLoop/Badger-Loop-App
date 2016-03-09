@@ -13,10 +13,10 @@
         </label>
       </div>
       <ion-list class="contact-list">
-        <ion-item class="item-avatar item-icon-right" ng-repeat="contact in contacts | filter: searchQuery | orderBy : 'name'" ng-click="viewContact(contact.id)">
-          <img class="profile-picture" src="{{ contact.face }}" alt=""/>
+        <ion-item class="item-avatar item-icon-right" ng-repeat="contact in contacts | filter: searchQuery | orderBy : 'name'" ng-click="viewContact(contact.link)">
+          <img class="profile-picture" ng-src="{{ contact.face }}" alt=""/>
           <p>
-            <a ui-sref="user({userId: id})" class="post-author">
+            <a class="post-author">
               {{ contact.name }}
             </a>
            <span class="badge badge-positive" >{{contact.group}}</span>

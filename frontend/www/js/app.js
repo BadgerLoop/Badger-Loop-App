@@ -78,6 +78,13 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'st
         controller: 'AuthCtrl'
     })
 
+     // vr screen
+    .state('instagram', {
+        url: '/instagram',
+        templateUrl: 'templates/instagram.html',
+        controller: 'InstaCtrl'
+    })
+
     // Fund screen
     .state('fundus', {
         url: '/fundus',

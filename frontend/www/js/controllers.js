@@ -13,12 +13,53 @@ angular.module('starter.controllers', [])
     $ionicSideMenuDelegate.canDragContent(false);
 })
 .controller('MenuCtrl', function($scope, Chats) {
-    // $scope.$on('$ionicView.afterEnter', function () {
-    //     $scope.unreadMsg = Chats.getNumUnread();
-    //     console.log('there are ' + $scope.unreadMsg + ' unread messagas' )
-    // });
     $scope.Chats = Chats;
+})
 
+.controller('InstaCtrl', function($scope, $timeout, PhotoService) {
+    $scope.items = [];
+    $scope.newItems = [];
+    $scope.noMoreItemsAvailable = false;
+
+    PhotoService.GetFeed().then(function(items) {
+
+      $scope.items = items.concat($scope.items);
+
+    });
+
+    $scope.doRefresh = function() {
+      if ($scope.newItems.length > 0) {
+        $scope.items = $scope.newItems.concat($scope.items);
+
+        //Stop the ion-refresher from spinning
+        $scope.$broadcast('scroll.refreshComplete');
+
+        $scope.newItems = [];
+      } else {
+        PhotoService.GetNewPhotos().then(function(items) {
+
+
+          $scope.items = items.concat($scope.items);
+
+          //Stop the ion-refresher from spinning
+          $scope.$broadcast('scroll.refreshComplete');
+        });
+      }
+    };
+    $scope.loadMore = function() {
+      PhotoService.GetOldPhotos().then(function(items) {
+
+        $scope.items = $scope.items.concat(items);
+
+        $scope.$broadcast('scroll.infiniteScrollComplete');
+        
+        // an empty array indicates that there are no more items
+        if (items.length === 0) {
+          $scope.noMoreItemsAvailable = true;
+        }
+
+      });
+    };
 })
 
 .controller('HomeCtrl', function($rootScope, $scope, TDCardDelegate, $state) {

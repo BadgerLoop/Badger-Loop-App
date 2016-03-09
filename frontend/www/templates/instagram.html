@@ -1,0 +1,18 @@
+<ion-view view-title="#BadgerLoop">
+    <ion-content>
+        <ion-refresher refreshing-text="Refreshing.." on-refresh="doRefresh()"></ion-refresher>
+        <div class="list card" ng-repeat="item in items track by item.id">
+            <div class="item item-avatar">
+                <img ng-src="{{item.user.profile_picture}}" ng-if="item.user.profile_picture.startsWith('https')">
+                <h2>{{item.user.username}}</h2>
+            </div>
+            <div class="item item-body">
+                <img ng-src="{{item.images.low_resolution.url}}" ng-if="item.images.low_resolution.url.startsWith('https')">
+                <p>
+                    {{item.caption.text}}
+                </p>
+            </div>
+        </div>
+        <ion-infinite-scroll immediate-check="false" on-infinite="loadMore()" distance="5%" ng-if="!noMoreItemsAvailable"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

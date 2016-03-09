@@ -71,8 +71,8 @@ angular.module('starter.controllers', [])
     console.log('CARDS CTRL');
     var cardTypes = [
 
-        { image: 'img/Carbon.png', link: 'https://sketchfab.com/models/831debd4b0974d3fb55e39c1318eb704/embed?autostart=1', name: 'Carbon Shell'},
         { image: 'img/Frame.png', link: 'https://sketchfab.com/models/78ff061f402948c7a9ddf34d59231f33/embed?autostart=1', name: 'Aluminum Frame'},
+        { image: 'img/Carbon.png', link: 'https://sketchfab.com/models/831debd4b0974d3fb55e39c1318eb704/embed?autostart=1', name: 'Carbon Shell'},
         { image: 'img/halbachwheel.png', link: 'https://sketchfab.com/models/753e97d889b04378abfbadd7e5e5796a/embed?autostart=1', name: 'Hallbach Wheel'},
         { image: 'img/Braking.png', link: 'https://sketchfab.com/models/7199f633568340c389c4cf1e92063c90/embed?autostart=1', name: 'Braking System'},
         { image: 'img/batterybox.png', link: 'https://sketchfab.com/models/f8afc5ddc991445e854b3f0f46374999/embed?autostart=1', name: 'Battery Box'}

@@ -70,9 +70,12 @@ angular.module('starter.controllers', [])
 .controller('HomeCtrl', function($rootScope, $scope, TDCardDelegate, $state) {
     console.log('CARDS CTRL');
     var cardTypes = [
+
+        { image: 'img/Carbon.png', link: 'https://sketchfab.com/models/831debd4b0974d3fb55e39c1318eb704/embed?autostart=1', name: 'Carbon Shell'},
+        { image: 'img/Frame.png', link: 'https://sketchfab.com/models/78ff061f402948c7a9ddf34d59231f33/embed?autostart=1', name: 'Aluminum Frame'},
         { image: 'img/halbachwheel.png', link: 'https://sketchfab.com/models/753e97d889b04378abfbadd7e5e5796a/embed?autostart=1', name: 'Hallbach Wheel'},
-        { image: 'img/batterybox.png', link: 'https://sketchfab.com/models/f8afc5ddc991445e854b3f0f46374999/embed?autostart=1', name: 'Battery Box'},
-        { image: 'img/Braking.png', link: 'https://sketchfab.com/models/7199f633568340c389c4cf1e92063c90/embed?autostart=1', name: 'Braking System'}
+        { image: 'img/Braking.png', link: 'https://sketchfab.com/models/7199f633568340c389c4cf1e92063c90/embed?autostart=1', name: 'Braking System'},
+        { image: 'img/batterybox.png', link: 'https://sketchfab.com/models/f8afc5ddc991445e854b3f0f46374999/embed?autostart=1', name: 'Battery Box'}
     ];
 
     $scope.timeline = [
@@ -151,7 +154,7 @@ angular.module('starter.controllers', [])
     }
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats, $ionicScrollDelegate, $ionicActionSheet, $timeout, $ionicModal) {
+.controller('ChatDetailCtrl', function($scope, $stateParams, Chats, $ionicScrollDelegate, $ionicActionSheet, $timeout) {
     $scope.chatadd = Chats;
     $scope.chat = Chats.get(0);
     $scope.focusManager = {focusInputOnBlur: true};
@@ -159,32 +162,6 @@ angular.module('starter.controllers', [])
     $scope.$on('$ionicView.afterEnter', function () {
         Chats.markAllRead();
     });
-     $ionicModal.fromTemplateUrl('templates/chat-info-modal.html', {        
-          scope: $scope,        
-          animation: 'slide-in-up'      
-      }).then(function(modal) {     
-          $scope.modal = modal;     
-          console.log('defined modal')      
-      });       
-        
-      $scope.openModal = function() {       
-      $scope.modal.show();      
-      };        
-      $scope.closeModal = function() {      
-      $scope.modal.hide();      
-      };        
-      //Cleanup the modal when we're done with it!      
-      $scope.$on('$destroy', function() {       
-      $scope.modal.remove();        
-      });       
-      // Execute action on hide modal       
-      $scope.$on('modal.hidden', function() {       
-      // Execute action     
-      });       
-      // Execute action on remove modal     
-      $scope.$on('modal.removed', function() {      
-      // Execute action     
-      });
 
     $scope.sendMessage = function() {
         var d = new Date();

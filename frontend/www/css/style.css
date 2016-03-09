@@ -1,3 +1,8 @@
+.instagram-username h2{
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
 .home-header {
     background: #E6DADA;
     /* fallback for old browsers */

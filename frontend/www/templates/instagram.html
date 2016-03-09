@@ -2,7 +2,7 @@
     <ion-content>
         <ion-refresher refreshing-text="Refreshing.." on-refresh="doRefresh()"></ion-refresher>
         <div class="list card" ng-repeat="item in items track by item.id">
-            <div class="item item-avatar">
+            <div class="item item-avatar instagram-username">
                 <img ng-src="{{item.user.profile_picture}}" ng-if="item.user.profile_picture.startsWith('https')">
                 <h2>{{item.user.username}}</h2>
             </div>

@@ -11,13 +11,13 @@
 
       <div ng-if="message.type == 'received'">
 
-        <img class="profile-picture left" src="{{ chat.face }}" />
+        <img class="profile-picture left" src="img/thumb/logobl.png" />
 
         <div class="chat-bubble left">
 
           <div class="message">
             {{ message.text | nl2br }}
-            <img src="{{ message.image }}" class="block" ng-if="message.image" alt=""/>
+           <!--  <img src="{{ message.image }}" class="block" ng-if="message.image" alt=""/> -->
           </div>
 
           <div class="message-detail">

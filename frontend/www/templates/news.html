@@ -8,14 +8,14 @@
   <div class="list card" ng-repeat="post in posts | orderBy: '-id'">
 
     <div class="item item-avatar news-article-header">
-      <img src="{{ post.face }}">
+      <img ng-src="{{post.face}}">
       <h2>{{ post.name }}</h2>
       <p>{{ post.time }}</p>
     </div>
 
     <div class="item item-body">
       <div ng-click="viewPost(post)">
-        <img class="full-image" ng-if="post.image" src="{{ post.image }}">
+        <img class="full-image" ng-if="post.image" ng-src="{{post.image}}">
         <p style="font-weight: bold;">{{post.title}}</p>
         <p>{{ post.content | nl2br}}</p>
       </div>

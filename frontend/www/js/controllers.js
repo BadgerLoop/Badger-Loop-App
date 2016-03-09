@@ -168,8 +168,7 @@ angular.module('starter.controllers', [])
             scope: $scope,        
             animation: 'slide-in-up'      
         }).then(function(modal) {     
-            $scope.modal = modal;     
-            console.log('defined modal')      
+            $scope.modal = modal;        
         });       
           
         $scope.openModal = function() {       
@@ -206,7 +205,7 @@ angular.module('starter.controllers', [])
     };
 
     $scope.shouldNotFocusOnBlur = function() {
-        console.log("should not focus");
+        // console.log("should not focus");
       $scope.focusManager.focusInputOnBlur = false;
     };
 

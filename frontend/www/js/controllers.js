@@ -12,8 +12,13 @@ angular.module('starter.controllers', [])
     // disabled swipe menu
     $ionicSideMenuDelegate.canDragContent(false);
 })
+
 .controller('MenuCtrl', function($scope, Chats) {
     $scope.Chats = Chats;
+
+    $scope.goToURL = function(url){
+        window.open(url, '_blank', 'location=yes');
+    }
 })
 
 .controller('InstaCtrl', function($scope, $timeout, PhotoService) {

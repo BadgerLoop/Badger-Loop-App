@@ -104,18 +104,18 @@
             <div class="item item-icon-left" ui-sref="chat-detail">
               <i class="icon ion-ios-email-outline"></i>
               Message our Pod
-              <span class="badge badge-assertive">{{Chats.getNumUnread()&gt;0? Chats.getNumUnread(): &apos;&apos;}}</span>
+              <span class="badge badge-assertive">{{Chats.getNumUnread() ? Chats.getNumUnread(): ''}}</span>
             </div>
             <div class="item item-icon-left" ui-sref="instagram">
               <i class="icon ion-social-instagram-outline"></i>
               #BadgerLoop
             </div>
-            <div class="item item-icon-left" onclick="window.open(&apos;https://www.badgerloop.com/&apos;, &apos;_blank&apos;, &apos;location=yes&apos;);">
+            <div class="item item-icon-left" ng-click="goToURL('https://www.badgerloop.com/')">
               <i class="icon ion-ios-cloud-outline"></i>
               Website
               <span class="badge badge-assertive"></span>
             </div>
-            <div class="item item-icon-left" onclick="window.open(&apos;https://www.badgerloop.com/VR/&apos;, &apos;_blank&apos;, &apos;location=yes&apos;);">
+            <div class="item item-icon-left" ng-click="goToURL('https://www.badgerloop.com/VR/')">
               <i class="icon ion-ios-glasses-outline"></i>
               Virtual Reality
             </div>

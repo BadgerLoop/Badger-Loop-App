@@ -17,7 +17,7 @@ angular.module('starter.controllers', [])
     $scope.Chats = Chats;
 
     $scope.goToURL = function(url){
-        window.open(url, '_blank', 'location=yes');
+        window.open(url, '_system', 'location=yes');
     }
 })
 

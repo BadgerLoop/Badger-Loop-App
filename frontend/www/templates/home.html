@@ -6,7 +6,7 @@
         <div class="list list-inset">
             <div class="item decktitle">Swipe Left to Skip or Right to See Render</div>
         </div>
-        
+        <ion-pane  ng-controller="CardsCtrl">
         <div class="row">
 <!--             <div ng-if="cards.length == 0">
                 <button class="button button-block" ng-click="reloadCards()">
@@ -37,7 +37,7 @@
                         <img ng-src="{{card.image}}">
                     </div>
                     <div class="button-bar">
-                        <button class="button button-clear button-positive" ng-click="goAway()">View</button>
+                        <button class="button button-clear button-positive" ng-click="loadRender($index)">View</button>
                         <button class="button button-clear button-positive" ng-click="goAway()">Skip</button>
                     </div>
                 </div>
@@ -47,21 +47,18 @@
         <!-- <div class="bar bar-subheader">
             <h2 class="tile">BadgerLoop Timeline</h2>
         </div> -->
-        <div class="row">    
+       <!--  <div class="row">    
                 <ul class="timeline">
                     <li ng-repeat="item in timeline">
-                        <!--For icon of timeline:
-              Use <img/> if you want to use a picture in stead of icon, for example
-              <div class="tmicon tmicon-calm"><img src="YourPicture.jpg"></div>-->
                         <div class="tmicon tmicon-assertive"><i class="{{item.icon}}"></i></div>
                         <div class="tmlabel tmlabel-assertive">
                             <h4>{{item.title}}</h4>
                             <p><small><i class="icon ion-ios-clock"></i>  {{item.time}}</small></p>
-                           <!--  <img class="timelineimg" ng-if='item.img' src="{{item.img}}" /> -->
                             <p>{{item.text}}</p>
                         </div>
                     </li>
                 </ul>
-        </div>
+        </div> -->
+        </ion-pane>
     </ion-content>
 </ion-view>

@@ -69,14 +69,14 @@ angular.module('starter.controllers', [])
 
 //NEW CARD CONTROLLERS
 
-.controller('CardsCtrl', function($scope, $ionicSwipeCardDelegate, $state) {
+.controller('CardsCtrl', function($scope, $ionicSwipeCardDelegate) {
     var cardTypes = [
 
-                    { image: 'img/Frame.png', link: 'https://sketchfab.com/models/78ff061f402948c7a9ddf34d59231f33/embed?autostart=1', title: 'Aluminum Frame'},
-                    { image: 'img/Carbon.png', link: 'https://sketchfab.com/models/831debd4b0974d3fb55e39c1318eb704/embed?autostart=1', title: 'Carbon Shell'},
-                    { image: 'img/halbachwheel.png', link: 'https://sketchfab.com/models/753e97d889b04378abfbadd7e5e5796a/embed?autostart=1', title: 'Halbach Wheel'},
-                    { image: 'img/Braking.png', link: 'https://sketchfab.com/models/7199f633568340c389c4cf1e92063c90/embed?autostart=1', title: 'Braking System'},
-                    { image: 'img/batterybox.png', link: 'https://sketchfab.com/models/f8afc5ddc991445e854b3f0f46374999/embed?autostart=1', title: 'Battery Box'}
+        { image: 'img/Frame.png', link: 'https://sketchfab.com/models/78ff061f402948c7a9ddf34d59231f33/embed?autostart=1', title: 'Aluminum Frame'},
+        { image: 'img/Carbon.png', link: 'https://sketchfab.com/models/831debd4b0974d3fb55e39c1318eb704/embed?autostart=1', title: 'Carbon Shell'},
+        { image: 'img/halbachwheel.png', link: 'https://sketchfab.com/models/753e97d889b04378abfbadd7e5e5796a/embed?autostart=1', title: 'Halbach Wheel'},
+        { image: 'img/Braking.png', link: 'https://sketchfab.com/models/7199f633568340c389c4cf1e92063c90/embed?autostart=1', title: 'Braking System'},
+        { image: 'img/batterybox.png', link: 'https://sketchfab.com/models/f8afc5ddc991445e854b3f0f46374999/embed?autostart=1', title: 'Battery Box'}
 
                     ];
 
@@ -104,13 +104,19 @@ angular.module('starter.controllers', [])
         var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
         newCard.id = Math.random();
         $scope.cards.push(angular.extend({}, newCard));
-    }
+    };
 })
 
-.controller('CardCtrl', function($scope, $ionicSwipeCardDelegate) {
-  $scope.goAway = function() {
-    var card = $ionicSwipeCardDelegate.getSwipeableCard($scope);
-    card.swipe();
+.controller('CardCtrl', function($scope, $ionicSwipeCardDelegate, $state) {
+
+    $scope.loadRender = function(index) {
+        console.log('RIGHT SWIPE');
+        //$scope.addCard();
+        $state.go('render', { link: $scope.cards[index].link, title: $scope.cards[index].title });
+    };
+    $scope.goAway = function() {
+        var card = $ionicSwipeCardDelegate.getSwipeableCard($scope);
+        card.swipe();
     }
 })
 

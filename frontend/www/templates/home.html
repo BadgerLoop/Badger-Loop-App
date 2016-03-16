@@ -8,8 +8,13 @@
         </div>
         
         <div class="row">
+<!--             <div ng-if="cards.length == 0">
+                <button class="button button-block" ng-click="reloadCards()">
+                    reload cards
+                </button>
+            </div> -->
 	        <td-cards>
-	            <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}">
+	            <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe($index)" class="card-{{$index}}">
 	                <div class="image">
 	                    <div class="no-text">NEXT</div>
 	                    <img ng-src="{{card.image}}">

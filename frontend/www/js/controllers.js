@@ -93,28 +93,53 @@ angular.module('starter.controllers', [])
 
     $scope.cardDestroyed = function(index) {
         $scope.cards.splice(index, 1);
+        if ($scope.cards.length == 0){
+            //load 5 more cards
+            for (i = 0; i<5; i++){
+                $scope.addCard();
+            }
+            //hack to reset index in ng-repeat
+            $scope.cards = $scope.cards;
+        }
     };
 
     $scope.addCard = function() {
-        var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
-        newCard.id = Math.random();
-        $scope.cards.push(angular.extend({}, newCard));
-    }
+        var newCard1 = cardTypes[Math.floor(Math.random() * cardTypes.length)];
+        newCard1.id = Math.random();
+        $scope.cards.push(angular.extend({}, newCard1));
+    };
+
     $scope.cardSwipedLeft = function(index) {
         console.log('LEFT SWIPE');
-        $scope.addCard();
+        //$scope.addCard();
     };
+    $scope.reloadCards = function() {
+        //console.log('RELOAD CARDS');
+        $scope.cards = Array.prototype.slice.call(cardTypes, 0);
+        //$scope.addCard();
+    };
+    $scope.cardPartialSwipe = function(index){
+        //console.log('PARTIAL SWIPE')
+        return null;
+    }
     $scope.cardSwipedRight = function(index) {
         console.log('RIGHT SWIPE');
-        $scope.addCard();
+        //$scope.addCard();
         $state.go('render', { link: $scope.cards[index].link, name: $scope.cards[index].name });
     };
 })
 
 // Render controller
-.controller('RenderCtrl', function($scope, $state, $sce, $stateParams) {
+.controller('RenderCtrl', function($scope, $state, $sce, $stateParams, $timeout) {
     $scope.link = $sce.trustAsResourceUrl($stateParams.link);
     $scope.name = $stateParams.name;
+    $timeout(function () {
+   $('.ex-link').click(function () {
+     var url = $(this).attr('href');
+     window.open(encodeURI(url), '_system', 'location=yes');
+     return false;
+   })
+})
 })
 
 // News controller

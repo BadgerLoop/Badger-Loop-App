@@ -11,7 +11,7 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-<script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
+    <script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
 
     <!-- angular-nl2br js -->
     <script src="lib/angular-nl2br/angular-nl2br.min.js"></script>
@@ -47,6 +47,7 @@
   <!-- CARDS -->
   <script src="lib/ionic-ion-tinder-cards/ionic.tdcards.js"></script>
   <script src="lib/collide/collide.js"></script>
+  <script src="lib/jquery/dist/jquery.min.js"></script>
   <link href="lib/ionic-ion-tinder-cards/ionic.tdcards.css" rel="stylesheet">
 
   </head>
@@ -104,18 +105,18 @@
             <div class="item item-icon-left" ui-sref="chat-detail">
               <i class="icon ion-ios-email-outline"></i>
               Message our Pod
-              <span class="badge badge-assertive">{{Chats.getNumUnread() ? Chats.getNumUnread(): &apos;&apos;}}</span>
+              <span class="badge badge-assertive">{{Chats.getNumUnread() ? Chats.getNumUnread(): ''}}</span>
             </div>
             <div class="item item-icon-left" ui-sref="instagram">
               <i class="icon ion-social-instagram-outline"></i>
               #BadgerLoop
             </div>
-            <div class="item item-icon-left" ng-click="goToURL(&apos;https://www.badgerloop.com/&apos;)">
+            <div class="item item-icon-left" ng-click="goToURL('https://www.badgerloop.com/')">
               <i class="icon ion-ios-cloud-outline"></i>
               Website
               <span class="badge badge-assertive"></span>
             </div>
-            <div class="item item-icon-left" ng-click="goToURL(&apos;https://www.badgerloop.com/VR/&apos;)">
+            <div class="item item-icon-left" ng-click="goToURL('https://www.badgerloop.com/VR/')">
               <i class="icon ion-ios-glasses-outline"></i>
               Virtual Reality
             </div>

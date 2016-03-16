@@ -208,7 +208,11 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'st
             }
         }
     })
-
+.filter('externalLinks', function() {
+   return function(text) {
+     return String(text).replace(/href=/gm, "class=\"ex-link\" href=");
+   }
+ })
 .run(function($ionicLoading) {
 
     var deploy = new Ionic.Deploy();
@@ -235,7 +239,6 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'st
           duration: 2000
         });
     });
-
     $ionicLoading.hide();
 
 });

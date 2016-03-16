@@ -8,6 +8,7 @@
   "dependencies": {
     "ngRiffle": "^0.4.4",
     "angular-stripe-checkout": "^4.0.1",
-    "ngCordova": "^0.1.24-alpha"
+    "ngCordova": "^0.1.24-alpha",
+    "jquery": "^2.2.1"
   }
 }

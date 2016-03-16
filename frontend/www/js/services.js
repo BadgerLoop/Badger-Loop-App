@@ -163,21 +163,21 @@ angular.module('starter.services', [])
         name: 'Alex Ballister',
         lastText: '',
         face: 'img/team/Alex.jpg',
-        group: 'Safety Team',
+        group: 'Safety Lead',
         link: null
     }, {
         id: 1,
         name: 'Austin Jeffries',
         lastText: '',
         face: 'img/team/Austin.jpg',
-        group: 'Structural Team',
+        group: 'Mechanical Lead',
         link: null
     }, {
         id: 2,
         name: 'Bill Carpenter',
         lastText: '',
         face: 'img/team/Bill.jpg',
-        group: 'Levitation Team',
+        group: 'Levitation Lead',
         link: null
     }, {
         id: 3,
@@ -191,28 +191,28 @@ angular.module('starter.services', [])
         name: 'Chase Roossin',
         lastText: '',
         face: 'img/team/Chase_Roossin_Professional_Photo_SmallerCopy.jpeg',
-        group: 'Software Team',
+        group: 'Software Lead',
         link: null
     }, {
         id: 5,
         name: 'Patrick Cummings',
         lastText: '',
         face: 'img/team/cummings.png',
-        group: 'Project Management Team',
+        group: 'Project Management',
         link: null
     }, {
         id: 6,
         name: 'David Van Veen',
         lastText: '',
         face: 'img/team/Dave.jpg',
-        group: 'Industry Team',
+        group: 'Operations Director',
         link: null
     }, {
         id: 7,
         name: 'Michael Dircz',
         lastText: '',
         face: 'img/team/dircz.jpg',
-        group: 'Marketing Team',
+        group: 'Marketing Lead',
         link: null
     }, {
         id: 8,
@@ -226,7 +226,7 @@ angular.module('starter.services', [])
         name: 'Eric Amikam',
         lastText: '',
         face: 'img/team/Eric.jpg',
-        group: 'Electrical Team',
+        group: 'Electrical Lead',
         link: null
     }, {
         id: 10,
@@ -240,35 +240,35 @@ angular.module('starter.services', [])
         name: 'Alec Fischer',
         lastText: '',
         face: 'img/team/fisher.png',
-        group: 'Levitation Team',
+        group: 'Dynamic Modeling Lead',
         link: null
     }, {
         id: 12,
         name: 'James Olson',
         lastText: '',
         face: 'img/team/James.jpg',
-        group: 'Team Finances',
+        group: 'Financial Director',
         link: null
     }, {
         id: 13,
         name: 'Johnnie Wagman',
         lastText: '',
         face: 'img/team/Johnnie.jpg',
-        group: 'Composites Team',
+        group: 'Team Coordinator',
         link: null
     }, {
         id: 14,
         name: 'Michael Knippen',
         lastText: '',
         face: 'img/team/Michael.jpg',
-        group: 'Project Management Team',
+        group: 'Project Management',
         link: null
     }, {
         id: 15,
         name: 'Seth Rueter',
         lastText: '',
         face: 'img/team/rueter.jpg',
-        group: 'Braking Team',
+        group: 'Braking Lead',
         link: null
     }, {
         id: 16,
@@ -282,21 +282,21 @@ angular.module('starter.services', [])
         name: 'Eric Schirtzinger',
         lastText: '',
         face: 'img/team/schirtzinger.jpg',
-        group: 'Video Production',
+        group: 'Media Lead',
         link: null
     }, {
         id: 17,
         name: 'Jayce Schmidtknecht',
         lastText: '',
         face: 'img/team/schmidtknecht.jpg',
-        group: 'Mechanical Team',
+        group: 'Fabrication Co-Lead',
         link: null
     }, {
         id: 18,
         name: 'Sid Smith',
         lastText: '',
         face: 'img/team/Sid.jpg',
-        group: 'Industry Team',
+        group: 'Industry Relations',
         link: null
     }, {
         id: 19,

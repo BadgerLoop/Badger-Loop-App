@@ -7,7 +7,7 @@ var STRIPE_API_PUBLISHABLE_KEY = "pk_live_fXAVXCShfBiNNmsb1nEiAxC2";
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'starter.controllers', 'starter.services', 'nl2br', 'monospaced.elastic', 'ngRiffle', 'ngCordova', 'ionic.contrib.ui.tinderCards'])
+angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'starter.controllers', 'starter.services', 'ionic.swipecards', 'nl2br', 'monospaced.elastic', 'ngRiffle', 'ngCordova', 'ionic.contrib.ui.tinderCards'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -100,7 +100,7 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'st
     .state('home', {
         url: '/home',
         templateUrl: 'templates/home.html',
-        controller: 'HomeCtrl'
+        controller: 'CardsCtrl'
     })
 
     // Home screen

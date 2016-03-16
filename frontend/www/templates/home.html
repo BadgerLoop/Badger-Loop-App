@@ -7,7 +7,7 @@
             <div class="item decktitle">Swipe Left to Skip or Right to See Render</div>
         </div>
         
-        <div class="row">
+        <div class="row" ng-controller="CardsCtrl">
 <!--             <div ng-if="cards.length == 0">
                 <button class="button button-block" ng-click="reloadCards()">
                     reload cards
@@ -37,8 +37,8 @@
                         <img ng-src="{{card.image}}">
                     </div>
                     <div class="button-bar">
-                        <button class="button button-clear button-positive" ng-click="goAway()">Answer</button>
-                        <button class="button button-clear button-positive" ng-click="goAway()">Decline</button>
+                        <button class="button button-clear button-positive" ng-click="goAway()">View</button>
+                        <button class="button button-clear button-positive" ng-click="goAway()">Skip</button>
                     </div>
                 </div>
                 </swipe-card>

@@ -13,7 +13,8 @@
                     reload cards
                 </button>
             </div> -->
-	        <td-cards>
+
+	        <!-- <td-cards>
 	            <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe($index)" class="card-{{$index}}">
 	                <div class="image">
 	                    <div class="no-text">NEXT</div>
@@ -22,7 +23,26 @@
 	                    <div class="yes-text">VIEW</div>
 	                </div>
 	            </td-card>
-	        </td-cards>
+	        </td-cards> -->
+            <swipe-cards>
+                <swipe-card on-card-swipe="cardSwiped()" id="start-card">
+                     Swipe down for a new card
+                </swipe-card>
+                <swipe-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-card-swipe="cardSwiped($index)">
+                <div ng-controller="CardCtrl">
+                    <div class="title">
+                        {{card.title}}
+                     </div>
+                    <div class="image">
+                        <img ng-src="{{card.image}}">
+                    </div>
+                    <div class="button-bar">
+                        <button class="button button-clear button-positive" ng-click="goAway()">Answer</button>
+                        <button class="button button-clear button-positive" ng-click="goAway()">Decline</button>
+                    </div>
+                </div>
+                </swipe-card>
+            </swipe-cards>
         </div>
         <!-- <div class="bar bar-subheader">
             <h2 class="tile">BadgerLoop Timeline</h2>

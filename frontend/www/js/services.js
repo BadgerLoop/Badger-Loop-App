@@ -10,13 +10,13 @@ angular.module('starter.services', [])
         face: 'img/thumb/logobl.png',
         messages: [{
             type: 'received',
-            text: 'Hey! This is Betsy, the BadgerLoop\'s Pod',
+            text: 'Hey! This is Betsy, the BadgerLoop Pod',
             image: '',
             time: d.toLocaleTimeString(),
             read: false
         }, {
             type: 'received',
-            text: 'Is there something I can help you with?',
+            text: 'Click on the info button to see what you can ask me!',
             image: '',
             time: d.toLocaleTimeString(),
             read: false

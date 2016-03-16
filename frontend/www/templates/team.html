@@ -13,7 +13,7 @@
         </label>
       </div>
       <ion-list class="contact-list">
-        <ion-item class="item-avatar item-icon-right" ng-repeat="contact in contacts | filter: searchQuery | orderBy : 'name'" ng-click="viewContact(contact.link)">
+        <ion-item class="item-avatar item-icon-right" ng-repeat="contact in contacts | filter: searchQuery | orderBy : 'name'">
           <img class="profile-picture" ng-src="{{ contact.face }}" alt=""/>
           <p>
             <a class="post-author">
@@ -21,11 +21,6 @@
             </a>
            <span class="badge badge-positive" >{{contact.group}}</span>
           </p>
-
-          <ion-option-button class="button-stable ion-edit" ng-click="edit(contact)">
-          </ion-option-button>
-          <ion-option-button class="button-assertive ion-android-delete" ng-click="remove(contact)">
-          </ion-option-button>
 
         </ion-item>
       </ion-list>

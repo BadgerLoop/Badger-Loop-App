@@ -111,9 +111,19 @@ router.post('/charge', function(req, res) {
  * =============================================================================
  */
 // when the user has not specified a destination account
-router.post('/postUpdate', function(req, res) {
-    
-    res.json("hello");
+router.post('/postUpdate', function(req, res) {    
+    var post = new Update({
+        createdAt: new Date(),
+        text: req.body.text,
+        author: req.body.author
+    });
+    post.save(function(err) {
+        if (err) {
+            res.json("[Failure] Couldn't Update Status");
+            return console.error(err);
+        }
+    });
+    res.json("[Success] Updated Status");
 });
 
 app.use(bodyParser.urlencoded({ extended: true }));

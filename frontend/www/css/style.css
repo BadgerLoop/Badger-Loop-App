@@ -117,7 +117,10 @@ em,i {
 }
 
 .home-pane {
-    background-color: #2C3E50;
+    background-image: url("/img/capital.png");
+    background-position: center;
+
+    // background-color: #2C3E50;
     // background: #E6DADA;
     // /* fallback for old browsers */
     // background: -webkit-linear-gradient(to left, #E6DADA, #274046);

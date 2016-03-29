@@ -20,10 +20,11 @@ var express    = require('express');
 var app        = express();                 
 var bodyParser = require('body-parser');
 var stripe     = require("stripe")(STRIPE_API_SECRET_KEY);
+var q          = require('q');
 
-var app         = express();
-var router      = express.Router();              
-var port        = process.env.PORT || 9311;
+var app        = express();
+var router     = express.Router();              
+var port       = process.env.PORT || 9311;
 
 
 // Cross Domain Origin Setup
@@ -50,9 +51,14 @@ app.use(function (req, res, next) {
 });
 
 
-
+/** 
+ * =============================================================================
+ * DB Backend
+ * =============================================================================
+ */
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://heroku_869vwj2s:imic6t35ihm7vrso393bh4hcgn@ds011840.mlab.com:11840/heroku_869vwj2s');
+// mongoose.connect('mongodb://localhost/test');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
@@ -63,12 +69,30 @@ db.once('open', function() {
 var Schema = mongoose.Schema;
 
 var updateSchema = new Schema({
-    createdAt: Number,
+    createdAt: Date,
     text: String,
     author: String
 });
 
 var Update = mongoose.model('Update', updateSchema);
+
+/** 
+ * =============================================================================
+ * Helper
+ * =============================================================================
+ */
+var getPost = function() {
+    var p = q.defer();
+    Update.findOne({}, function(err, post) {
+        if (post !== null){
+            p.resolve(post);
+        }
+        else{
+            p.reject("Can't find customer");
+        }
+    });
+    return p.promise;
+}
 
 /** 
  * =============================================================================
@@ -107,24 +131,52 @@ router.post('/charge', function(req, res) {
 
 /** 
  * =============================================================================
- * Update
+ * Update Post
  * =============================================================================
  */
-// when the user has not specified a destination account
 router.post('/postUpdate', function(req, res) {    
-    var post = new Update({
+    getPost().then(function(post){
+        post.createdAt = new Date();
+        post.text = req.body.text;
+        post.author = req.body.author;
+        post.save(function(err) {
+            if (err) return console.error(err);
+        });
+        res.json("[Success] Updated Status");
+    }, function(err){
+        var post = new Update({
         createdAt: new Date(),
         text: req.body.text,
         author: req.body.author
+        });
+        post.save(function(err) {
+            if (err) {
+                res.json("[Failure] Couldn't Update Status");
+                return console.error(err);
+            }
+        });
+        res.json("[Success] Update Status");
     });
-    post.save(function(err) {
-        if (err) {
-            res.json("[Failure] Couldn't Update Status");
-            return console.error(err);
-        }
-    });
-    res.json("[Success] Updated Status");
 });
+/** 
+ * =============================================================================
+ * Get Post
+ * =============================================================================
+ */
+router.post('/postGet', function(req, res) {    
+    getPost().then(function(post){
+        res.json(post);
+    }, function(err){
+        res.json(err);
+    });
+});
+
+
+
+//Print IP Address
+require('dns').lookup(require('os').hostname(), function (err, add, fam) {
+  console.log('addr: '+add);
+})
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

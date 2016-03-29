@@ -8,6 +8,7 @@
   "dependencies": {
     "async": "~0.2.8",
     "express": "~4.0.0",
+    "q": "^1.4.1",
     "express-session": "~1.11.3",
     "socket.io": "~0.9.14",
     "mongoose": ">=4.3.0",

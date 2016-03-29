@@ -11,7 +11,7 @@
  */
 
 // define your keys here
-var STRIPE_API_SECRET_KEY   = process.ev.STRIPE_API_SECRET_KEY;              
+var STRIPE_API_SECRET_KEY   = System.getenv('STRIPE_API_SECRET_KEY');              
 
 // init instances
 var qs         = require('querystring');

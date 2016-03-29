@@ -103,6 +103,12 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'st
         controller: 'HomeCtrl'
     })
 
+    .state('gallery', {
+        url: '/gallery',
+        templateUrl: 'templates/gallery.html',
+        controller: 'HomeCtrl'
+    })    
+
     // Home screen
     .state('render', {
         url: '/render/:name',

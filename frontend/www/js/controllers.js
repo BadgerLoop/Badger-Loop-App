@@ -78,16 +78,6 @@ angular.module('starter.controllers', [])
         { image: 'img/batterybox.png', link: 'https://sketchfab.com/models/f8afc5ddc991445e854b3f0f46374999/embed?autostart=1', name: 'Battery Box'}
     ];
 
-    $scope.timeline = [
-      { id: 1, title: 'BadgerLoop Founded', text: 'BadgerLoop was founded in July of 2015 after SpaceX announced the Hyperloop Competition', icon: 'ion-chevron-right', time: 'July 2015'},
-      { id: 2, title: 'First KickOff Meeting', text: 'BadgerLoop hosted its first kickoff meeting on September 10, 2015. Our team’s goal was to recruit UW Madison students to begin formulating a design.', icon: 'ion-chevron-right', time: 'September 2015'},
-      { id: 3, title: 'Preliminary Design Due', text: 'The Preliminary Design for our Hyperloop pod was due on November 13, 2015. Our team spent countless hours preparing this package for SpaceX. Details of the design covered all different teams: mechanical, electrical, software, safety, braking and levitation.', icon: 'ion-chevron-right', time: 'November 2015'},
-      { id: 4, title: 'Final Design Package Due', text: 'The Final Design Package was submitted to SpaceX on January 20, 2016 before Design Weekend.', icon: 'ion-chevron-right', time: 'January 2016'},
-      { id: 5, title: 'Design Weekend', text: 'Design Weekend took place at Texas A&M from January 29th to the 30th, 2016. A team of about 20 BadgerLoopers made the trip out to College Station to showcase our pod design to the SpaceX judges and public. BadgerLoop was honored to receive 3rd place and advance to Competition Weekend. ', icon: 'ion-chevron-right', time: 'January 2016'},
-      { id: 6, title: 'Design Freeze', text: 'Our final design submission was submitted in late February of 2016. After hearing feedback from both the SpaceX judges and assigned SpaceX advisors, an official design for the pod was set in place for the team to begin fabrication.', icon: 'ion-chevron-right', time: 'February 2016'},
-      { id: 7, title: 'Competition Weekend', text: 'After completing the fabrication process, BadgerLoop will travel to Hawthorne, CA in August of 2016 to test the pod in the tube that SpaceX is currently constructing. Our pod will be tested in four general categories of “Final Design and Construction”, “Safety and Reliability”, “Performance in Operations” and“Performance in Flight”.', icon: 'ion-chevron-right', time: 'August 2016'},
-    ];
-
     $scope.cards = Array.prototype.slice.call(cardTypes, 0);
     $rootScope.unseenMsg = 2;
 

@@ -105,6 +105,17 @@ router.post('/charge', function(req, res) {
     });
 });
 
+/** 
+ * =============================================================================
+ * Update
+ * =============================================================================
+ */
+// when the user has not specified a destination account
+router.post('/postUpdate', function(req, res) {
+    
+    res.json("hello");
+});
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/', router); // register our route

@@ -1,47 +1,32 @@
 <ion-view view-title="BadgerLoop">
     <ion-content overflow-scroll="true" class="home-pane">
-	    <!-- <div class="deckheader bar bar-header home-header">
-            <h1 class="title tindertitle">Swipe Left to Skip or Right to See Render</h1>
-        </div> -->
-        <div class="list list-inset">
-            <div class="item decktitle">Swipe Left to Skip or Right to See Render</div>
-        </div>
+    
+
+        <div class="row row-center"> 
         
-        <div class="row">
-<!--             <div ng-if="cards.length == 0">
-                <button class="button button-block" ng-click="reloadCards()">
-                    reload cards
-                </button>
-            </div> -->
-	        <td-cards>
-	            <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe($index)" class="card-{{$index}}">
-	                <div class="image">
-	                    <div class="no-text">NEXT</div>
-	                    <img ng-src="{{card.image}}">
-                        <div class="info-text">{{card.name}}</div>
-	                    <div class="yes-text">VIEW</div>
-	                </div>
-	            </td-card>
-	        </td-cards>
+            <img masked-image="" src="img/terrace.png" class="img-responsive img-circle">
+
         </div>
-        <!-- <div class="bar bar-subheader">
-            <h2 class="tile">BadgerLoop Timeline</h2>
-        </div> -->
-        <div class="row">    
-                <ul class="timeline">
-                    <li ng-repeat="item in timeline">
-                        <!--For icon of timeline:
-              Use <img/> if you want to use a picture in stead of icon, for example
-              <div class="tmicon tmicon-calm"><img src="YourPicture.jpg"></div>-->
-                        <div class="tmicon tmicon-assertive"><i class="{{item.icon}}"></i></div>
-                        <div class="tmlabel tmlabel-assertive">
-                            <h4>{{item.title}}</h4>
-                            <p><small><i class="icon ion-ios-clock"></i>  {{item.time}}</small></p>
-                           <!--  <img class="timelineimg" ng-if='item.img' src="{{item.img}}" /> -->
-                            <p>{{item.text}}</p>
-                        </div>
-                    </li>
-                </ul>
+
+            <!-- <img src="img/BLwhite.png" style="{width: inherit;}"></img> -->
+        <br>   
+        <div class="row row-bottom">
+            
+            <button class="button button-full button-dark">
+                 <img alt="Logo" class="special" height="50" src="img/BLwhite.png">
+                    <!-- March 28th -->
+                <hr>
+                <div class="col">
+                    <strong class="special">"Finished riveting the frame"</strong>
+                    <br>
+                    <small class="author">Duncan Adams</small><small class="date"><i> 11:55 am<i></small> 
+                </div>
+                
+                
+                
+                    
+            </button>
         </div>
+       
     </ion-content>
 </ion-view>

@@ -1,0 +1,32 @@
+<ion-view view-title="Gallery">
+    <ion-content class="">
+	    <!-- <div class="deckheader bar bar-header home-header">
+            <h1 class="title tindertitle">Swipe Left to Skip or Right to See Render</h1>
+        </div> -->
+        <div class="list list-inset">
+            <div class="item decktitle">Swipe Left to Skip or Right to See Render</div>
+        </div>
+        
+        <div class="row">
+<!--             <div ng-if="cards.length == 0">
+                <button class="button button-block" ng-click="reloadCards()">
+                    reload cards
+                </button>
+            </div> -->
+	        <td-cards>
+	            <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe($index)" class="card-{{$index}}">
+	                <div class="image">
+	                    <div class="no-text">NEXT</div>
+	                    <img ng-src="{{card.image}}">
+                        <div class="info-text">{{card.name}}</div>
+	                    <div class="yes-text">VIEW</div>
+	                </div>
+	            </td-card>
+	        </td-cards>
+        </div>
+        <!-- <div class="bar bar-subheader">
+            <h2 class="tile">BadgerLoop Timeline</h2>
+        </div> -->
+        
+    </ion-content>
+</ion-view>

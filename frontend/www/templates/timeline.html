@@ -1,0 +1,27 @@
+<ion-view view-title="Timeline">
+    <ion-content class="">
+	    <!-- <div class="deckheader bar bar-header home-header">
+            <h1 class="title tindertitle">Swipe Left to Skip or Right to See Render</h1>
+        </div> -->
+        
+        <!-- <div class="bar bar-subheader">
+            <h2 class="tile">BadgerLoop Timeline</h2>
+        </div> -->
+        <div class="row">    
+                <ul class="timeline">
+                    <li ng-repeat="item in timeline">
+                        <!--For icon of timeline:
+              Use <img/> if you want to use a picture in stead of icon, for example
+              <div class="tmicon tmicon-calm"><img src="YourPicture.jpg"></div>-->
+                        <div class="tmicon tmicon-assertive"><i class="{{item.icon}}"></i></div>
+                        <div class="tmlabel tmlabel-assertive">
+                            <h4>{{item.title}}</h4>
+                            <p><small><i class="icon ion-ios-clock"></i>  {{item.time}}</small></p>
+                           <!--  <img class="timelineimg" ng-if='item.img' src="{{item.img}}" /> -->
+                            <p>{{item.text}}</p>
+                        </div>
+                    </li>
+                </ul>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,3 +1,72 @@
+#circle1 {
+    width: 200px;
+    height: 200px;
+    background: red;
+}
+.circle {
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 20px;
+    position:absolute;
+    left: 0;
+    right: 0;
+    margin:0 auto;
+    top:33.33%;
+    transform:translateY(-50%);
+    
+}
+
+img.special {
+    margin-top: 10px;
+}
+
+strong.special {
+    font-size: 16px;
+
+}
+small.date {
+    font-size: 11px;
+}
+small.author {
+    font-size: 12px;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+em,i {
+    font-style: italic;
+}
+
+.img-circle {
+    border-radius: 50%;
+    
+}
+
+.row-center img {
+    position:absolute;
+    left: 0;
+    right: 0;
+    margin:0 auto;
+    top:33.33%;
+    transform:translateY(-50%);
+    max-width: 50%;
+
+}
+
+.row-bottom {
+    position:absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top:60%;
+
+}
+
 .instagram-username h2{
     margin-top: 10px;
     text-transform: uppercase;

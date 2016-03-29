@@ -218,33 +218,34 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'st
    return function(text) {
      return String(text).replace(/href=/gm, "class=\"ex-link\" href=");
    }
- });
-// .run(function($ionicLoading) {
+ })
 
-//     var deploy = new Ionic.Deploy();
-//     deploy.check().then(function(hasUpdate) {
-//         console.log('Ionic Deploy: Update available: ' + hasUpdate);
-//         deploy.update().then(function(res) {
+.run(function($ionicLoading) {
+
+    var deploy = new Ionic.Deploy();
+    deploy.check().then(function(hasUpdate) {
+        console.log('Ionic Deploy: Update available: ' + hasUpdate);
+        deploy.update().then(function(res) {
             
-//         }, function(err) {
-//             console.log('Ionic Deploy: Update error! ', err);
-//             $ionicLoading.show({
-//               template: 'Update Error :(',
-//               duration: 2000
-//             });
-//         }, function(prog) {
-//             console.log('Ionic Deploy: Progress... ', prog);
-//             $ionicLoading.show({
-//                 template: "Updating:\n" + prog + "%"
-//             });
-//         });
-//     }, function(err) {
-//         console.error('Ionic Deploy: Unable to check for updates', err);
-//         $ionicLoading.show({
-//           template: 'Unable to check for updates',
-//           duration: 2000
-//         });
-//     });
-//     $ionicLoading.hide();
+        }, function(err) {
+            console.log('Ionic Deploy: Update error! ', err);
+            $ionicLoading.show({
+              template: 'Update Error :(',
+              duration: 2000
+            });
+        }, function(prog) {
+            console.log('Ionic Deploy: Progress... ', prog);
+            $ionicLoading.show({
+                template: "Updating:\n" + prog + "%"
+            });
+        });
+    }, function(err) {
+        console.error('Ionic Deploy: Unable to check for updates', err);
+        $ionicLoading.show({
+          template: 'Unable to check for updates',
+          duration: 2000
+        });
+    });
+    $ionicLoading.hide();
 
-// });
+});

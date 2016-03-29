@@ -11,7 +11,7 @@
  */
 
 // define your keys here
-var STRIPE_API_SECRET_KEY   = 'sk_live_4Vb8kJwWGak7It7voSnT1TlL';              
+var STRIPE_API_SECRET_KEY   = process.ev.STRIPE_API_SECRET_KEY;              
 
 // init instances
 var qs         = require('querystring');
@@ -50,6 +50,25 @@ app.use(function (req, res, next) {
 });
 
 
+
+var mongoose = require('mongoose');
+mongoose.connect(process.ev.MONGOLAB_URI);
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+    // we're connected!
+    console.log("Connected to DB");
+});
+
+var Schema = mongoose.Schema;
+
+var updateSchema = new Schema({
+    createdAt: Number,
+    text: String,
+    author: String
+});
+
+var Update = mongoose.model('Update', updateSchema);
 
 /** 
  * =============================================================================

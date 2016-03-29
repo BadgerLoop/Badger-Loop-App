@@ -57,7 +57,7 @@ app.use(function (req, res, next) {
  * =============================================================================
  */
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://chase:badgerloop@ds011840.mlab.com:11840/heroku_869vwj2s');
+mongoose.connect('mongodb://heroku_869vwj2s:imic6t35ihm7vrso393bh4hcgn@ds011840.mlab.com:11840/heroku_869vwj2s');
 // mongoose.connect('mongodb://localhost/test');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

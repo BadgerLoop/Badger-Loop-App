@@ -1,3 +1,4 @@
+
 #circle1 {
     width: 200px;
     height: 200px;
@@ -117,7 +118,7 @@ em,i {
 }
 
 .gallery-pane {
-    background-image: url("../img/skyline.png");
+    background-image: url("../img/terrace.png");
     background-position: center;
 }
 

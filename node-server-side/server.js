@@ -88,7 +88,7 @@ var getPost = function() {
             p.resolve(post);
         }
         else{
-            p.reject("Can't find customer");
+            p.reject("Can't find post");
         }
     });
     return p.promise;

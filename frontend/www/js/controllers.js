@@ -67,7 +67,7 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('HomeCtrl', function($rootScope, $scope, TDCardDelegate, $state) {
+.controller('HomeCtrl', function($rootScope, $scope, TDCardDelegate, $state, $http) {
     console.log('CARDS CTRL');
     var cardTypes = [
 
@@ -77,6 +77,20 @@ angular.module('starter.controllers', [])
         { image: 'img/Braking.png', link: 'https://sketchfab.com/models/7199f633568340c389c4cf1e92063c90/embed?autostart=1', name: 'Braking System'},
         { image: 'img/batterybox.png', link: 'https://sketchfab.com/models/f8afc5ddc991445e854b3f0f46374999/embed?autostart=1', name: 'Battery Box'}
     ];
+
+    $scope.postUpdate = {}; 
+
+    //Get new update from DB
+    $http({
+      method: 'POST',
+      url: SERVER_SIDE_URL + '/postGet'
+    }).then(function successCallback(post) {
+        $scope.postUpdate.author = post.data.author;
+        $scope.postUpdate.timeStamp = post.data.createdAt;
+        $scope.postUpdate.text = post.data.text;
+    }, function errorCallback(err) {
+        
+    });
 
     $scope.cards = Array.prototype.slice.call(cardTypes, 0);
     $rootScope.unseenMsg = 2;

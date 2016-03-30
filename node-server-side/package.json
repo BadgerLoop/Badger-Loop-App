@@ -4,18 +4,17 @@
   "description": "Stripe charge API",
   "main": "server.js",
   "repository": "",
-  "author": "Noodl.io <noodl@seipel-ibisevic.com>",
+  "author": "BadgerLoop.com <info@badgerloop.com>",
   "dependencies": {
     "async": "~0.2.8",
-    "express": "~4.0.0",
-    "q": "^1.4.1",
-    "express-session": "~1.11.3",
-    "socket.io": "~0.9.14",
-    "mongoose": ">=4.3.0",
-    "stripe": "4.0.0",
-    "mongoose": "~3.6.13",
     "body-parser": "~1.0.1",
+    "express": "~4.0.0",
+    "express-session": "~1.11.3",
+    "mongoose": ">=4.3.0",
+    "q": "^1.4.1",
     "querystring": "~0.2.0",
-    "request": "~2.65.0"
+    "request": "~2.65.0",
+    "socket.io": "~0.9.14",
+    "stripe": "4.0.0"
   }
 }

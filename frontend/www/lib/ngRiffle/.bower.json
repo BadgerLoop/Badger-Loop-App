@@ -21,18 +21,17 @@
   ],
   "dependencies": {
     "angular": "^1.2.0",
-    "jsRiffle": "0.4.4"
+    "jsRiffle": "0.4.7"
   },
   "homepage": "https://github.com/exis-io/ngRiffle",
-  "version": "0.4.4",
-  "_release": "0.4.4",
+  "version": "0.4.7",
+  "_release": "0.4.7",
   "_resolution": {
     "type": "version",
-    "tag": "v0.4.4",
-    "commit": "0289c28e4de430d801c77f5a4369edd633567a13"
+    "tag": "v0.4.7",
+    "commit": "b9a956c7029443082b6477a6db493bc66bcd77ab"
   },
   "_source": "git://github.com/exis-io/ngRiffle.git",
   "_target": "^0.4.4",
-  "_originalSource": "ngRiffle",
-  "_direct": true
+  "_originalSource": "ngRiffle"
 }

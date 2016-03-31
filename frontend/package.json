@@ -41,6 +41,7 @@
       "platform": "ios",
       "version": "4.0.x",
       "locator": "ios@4.0.x"
-    }
+    },
+    "android"
   ]
 }

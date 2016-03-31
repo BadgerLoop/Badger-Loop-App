@@ -22,14 +22,14 @@
     "tests",
     "examples"
   ],
-  "version": "0.4.4",
-  "_release": "0.4.4",
+  "version": "0.4.7",
+  "_release": "0.4.7",
   "_resolution": {
     "type": "version",
-    "tag": "v0.4.4",
-    "commit": "797a818d8a5745f754c4d0ec4d3a0f3734474b2f"
+    "tag": "v0.4.7",
+    "commit": "8e6d5e034aedf9c2cd5d77be7240fb8d583753d3"
   },
   "_source": "git://github.com/exis-io/jsRiffle.git",
-  "_target": "0.4.4",
+  "_target": "0.4.7",
   "_originalSource": "jsRiffle"
 }

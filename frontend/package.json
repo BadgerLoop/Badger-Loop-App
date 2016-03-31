@@ -26,9 +26,21 @@
       "id": "cordova-plugin-x-socialsharing"
     },
     "ionic-plugin-deploy",
-    "cordova-plugin-inappbrowser"
+    "cordova-plugin-inappbrowser",
+    "cordova-plugin-whitelist@1.0.0",
+    {
+      "variables": {
+        "SENDER_ID": "badger-1267"
+      },
+      "locator": "phonegap-plugin-push",
+      "id": "phonegap-plugin-push"
+    }
   ],
   "cordovaPlatforms": [
-    "ios"
+    {
+      "platform": "ios",
+      "version": "4.0.x",
+      "locator": "ios@4.0.x"
+    }
   ]
 }

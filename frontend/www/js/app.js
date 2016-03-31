@@ -220,7 +220,7 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'st
    }
  })
 
-.run(function($ionicLoading) {
+.run(function($ionicLoading, $ionicPlatform) {
 
     var deploy = new Ionic.Deploy();
     deploy.check().then(function(hasUpdate) {
@@ -247,5 +247,17 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'st
         });
     });
     $ionicLoading.hide();
+
+    //Initialize Push
+    $ionicPlatform.ready(function() {
+    var push = new Ionic.Push({
+      "debug": true
+    });
+
+    push.register(function(token) {
+      console.log("Device token:",token.token);
+      push.saveToken(token);  // persist the token in the Ionic Platform
+    });
+  });
 
 });

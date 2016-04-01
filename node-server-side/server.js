@@ -166,8 +166,9 @@ router.post('/postUpdate', function(req, res) {
 router.post('/postSlack', function(req, res) {    
     getPost().then(function(post){
         post.createdAt = new Date();
-        post.text = req.body.text;
-        post.author = req.body.user_name;
+        var input = req.body.text.split('/');
+        post.text = input[1];
+        post.author = input[2];
         post.save(function(err) {
             if (err) return console.error(err);
         });

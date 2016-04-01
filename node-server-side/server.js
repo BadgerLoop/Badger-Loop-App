@@ -160,6 +160,35 @@ router.post('/postUpdate', function(req, res) {
 });
 /** 
  * =============================================================================
+ * Post Slack
+ * =============================================================================
+ */
+router.post('/postSlack', function(req, res) {    
+    getPost().then(function(post){
+        post.createdAt = new Date();
+        post.text = req.body.text;
+        post.author = req.body.user_name;
+        post.save(function(err) {
+            if (err) return console.error(err);
+        });
+        res.json("[Success] Updated Status");
+    }, function(err){
+        var post = new Update({
+        createdAt: new Date(),
+        text: req.body.text,
+        author: req.body.author
+        });
+        post.save(function(err) {
+            if (err) {
+                res.json("[Failure] Couldn't Update Status");
+                return console.error(err);
+            }
+        });
+        res.json("[Success] Update Status");
+    });
+});
+/** 
+ * =============================================================================
  * Get Post
  * =============================================================================
  */

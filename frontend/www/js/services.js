@@ -34,6 +34,7 @@ angular.module('starter.services', [])
             var d = new Date();
             chats[0].messages.push(msg); //push input message
             $riffle.call("message", msg.text).then(function(result) {
+                console.log(result);
                 chats[0].messages.push({
                     'type': 'received',
                     'text': result,

@@ -187,7 +187,7 @@ angular.module('starter', ['ionic', 'ionic.service.core', 'stripe.checkout', 'st
 })
 
 .run(function($riffle) {
-    $riffle.setToken("hUzpwpthlJWeHG9Kb9W8yhWodm-sYQvOijNMYqY2mOxoFfZ2BZb8E.QWd1NOxCVFhW249ODPVfZ2tZZk4ke8N.h.wochywzF.PNrYWsPwYDjfsTCfSmXx1JUAW.29uwwh2GirelkMABQ5ynckHtCwTxYoT39K5nkxtjoA-VWHN4_");
+    $riffle.setToken("69z01ijIPeLlCFPjLTbMs4JQGwY4bdxRGzVhxefn.mBJnnkfIzF.DxbMRM70.dJCAHZIHvviv697Wd9ZDa83l2LNcnmqv.qkDyRcmPFodjAkXJi1r2m7RgGSXAcrHIGQTMHU4CtoJbwqXXMksRCBd3CPt2-JOUX6hq7qr2m0g-g_");
     $riffle.join();
 })
 
